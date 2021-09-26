@@ -11,10 +11,10 @@ function bePositive($arr) {
 
     foreach($arr as $value){
         if($value <= 0){
-            echo -1* $value;
+            echo -1* $value." ";
         }
         else{
-            echo $value;
+            echo $value." ";
         }
     }
 }
