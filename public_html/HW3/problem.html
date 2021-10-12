@@ -8,12 +8,25 @@
         window.addEventListener("load", () => {
             console.log("loaded via javascript");
             //TODO: add any extra onload processing you may need here
+            tags= document.getElementsByTagName("a");
+            
+            
+            for(var i=0; i<tags.length;i++){
+                console.log(tags[i]);
+                tags[i].addEventListener("click", getCurrentSelection);
+            }
+
+            
+            
+            
         });
-        function getCurrentSelection() {
+        function getCurrentSelection(event) {
             setTimeout(() => {
+                console.log(event);
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
-
+                var process = event.path[0].innerHTML;
+                updateCurrentPage(process);
                 //Note: likely you'll want to call updateCurrentPage towards the end
             }, 100);
         }
@@ -51,6 +64,7 @@
 
         h1 {
             text-transform: capitalize;
+            
         }
         
         /* add styling of your own */
@@ -61,20 +75,8 @@
         
 
        
-        /*Edit the given <style> tag to customize the appearance of this page
-(1 pt) Make the navigation horizontal
-(1 pt) Get rid of the navigation list item markers
-(1 pt) Give the navigation a background
-(1 pt) Make the links (or their surrounding area) change color on mouseover
-(1 pt) Change the "bullet points" of this entire list to checkmarks (✓)
-(1 pt) Use CSS to uppercase the first character of the content in the <h1> tag and the <a> tags
-(1 pt) Add some styling of your choice (that doesn't conflict with any requests in this assignment), mention it in the HW submission as a comment in the Pull Request
-(1 pt) Any style applied to unordered list in the <nav> tag should not apply to this list (i.e., nav and this list should not appear identical)
-Any time a navigation link is clicked have it do the following:
-(1 pt) Update the content of the <h1> tag with the link text
-(1 pt) Update the content of the <title> tag with the link text
-Hint: Get the word of the current navigation and pass it to updateCurrentPage()
-        */
+        /*Edit the given <style> tag to customize the appearance of this page*/
+
     </style>
     <!-- make the necessary edits above this line -->
 
