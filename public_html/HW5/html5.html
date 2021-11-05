@@ -117,6 +117,8 @@ function startGame() {
   canvas.removeEventListener('click', startGame);
   // Put the target at a random starting point
 	moveTarget();
+  moveTarget2();
+  moveEnemy();
   // Kick off the draw loop
   draw();
 }
