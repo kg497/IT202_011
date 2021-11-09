@@ -3,7 +3,7 @@
 ## Github Link: (Prod Branch of Project Folder)
 ## Project Board Link: 
 ## Website Link: (Heroku Prod of Project folder)
-## Your Name:
+## Your Name: KellyAnne George
 
 <!--
 ### Line item / Feature template (use this for each bullet point)
