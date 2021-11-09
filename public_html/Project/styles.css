@@ -3,7 +3,7 @@
 }
 
 .alert-warning {
-    background-color: yellow;
+    background-color: rgb(93, 101, 214);
 }
 
 .alert-danger {
@@ -13,7 +13,7 @@
 .alert-info {
     background-color: rgb(135, 204, 204);
 }
-nav li{display: inline; background-color: rgb(12, 11, 11);}
+nav li{display: inline; background-color: rgb(221, 182, 182);}
 nav li a{color: rgb(243, 229, 233)}
 
 body{
