@@ -11,10 +11,11 @@ $username =se($_POST, "username", "", false);
             <label class="form-label" for="email">Email</label>
             <input class="form-control" type="email" id="email" name="email" 
             required value = "<?php se($email);?>" />
+            
         </div>
         <div class="mb-3">
             <label class="form-label" for="username">Username</label>
-            <input class="form-control" type="text" name="username" required maxlength="30"
+            <input class="form-control" type="text" name="username" required maxlength="30" 
             required value = "<?php se($username);?>" />
         </div>
         <div class="mb-3">
@@ -98,5 +99,5 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm
 }
 ?>
 <?php
-require(__DIR__ . "/../../partials/footer.php");
+require(__DIR__ . "/../../partials/flash.php");
 ?>
