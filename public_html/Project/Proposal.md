@@ -54,7 +54,6 @@
         - Outputs an error messages when an account either doesn’t exist
       - ![image](https://user-images.githubusercontent.com/90022095/141378554-45e50ba0-cb92-4f68-a4ff-6d6a161f5f67.png)
         - Logging in shows users names and give them admin role when I used my admin account. User also ends up at a landing page upon login. This image shows the protected page 'profile' that can only be seen by a logged in user.
-      
  [X] (11/11/2021) User will be able to logout
   -  List of Evidence of Feature Completion
     - Status: Completed
