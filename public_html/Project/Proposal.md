@@ -24,7 +24,7 @@
 ### Proposal Checklist and Evidence
 
 - Milestone 1
- [X] (11/11/2021) User will be able to register a new account
+- [X] (11/11/2021) User will be able to register a new account
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/register.php
@@ -39,7 +39,7 @@
         - Gives 'please fill out this field' message to show that username is required
       - ![image](https://user-images.githubusercontent.com/90022095/141377583-9ce8a0d3-6290-419b-b14b-fc2a36daa35f.png)
         - Confirm passwords match
- [X] (11/11/2021) User will be able to login to their account (given they enter the correct credentials)
+- [X] (11/11/2021) User will be able to login to their account (given they enter the correct credentials)
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/login.php
@@ -54,7 +54,7 @@
         - Outputs an error messages when an account either doesn’t exist
       - ![image](https://user-images.githubusercontent.com/90022095/141378554-45e50ba0-cb92-4f68-a4ff-6d6a161f5f67.png)
         - Logging in shows users names and give them admin role when I used my admin account. User also ends up at a landing page upon login. This image shows the protected page 'profile' that can only be seen by a logged in user.
- [X] (11/11/2021) User will be able to logout
+- [X] (11/11/2021) User will be able to logout
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/login.php
@@ -63,7 +63,7 @@
     - Screenshots
       - ![image](https://user-images.githubusercontent.com/90022095/141384930-a8b5b1b4-f85e-4849-a9f5-4407f1372838.png)
         - After logging out, a message is displayed and the user is redirected to the login page.
- [X] (11/11/2021) Basic security rules implemented
+- [X] (11/11/2021) Basic security rules implemented
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/profile.php
@@ -74,7 +74,7 @@
         - Function to check if user is logged in. This function is only used for pages that need to be logged in. For example, the function has_role uses the is_logged_in function.
       - ![image](https://user-images.githubusercontent.com/90022095/141379569-8dcf9260-2ce3-4d33-b347-181e081f9b76.png)
         - Have roles table
- [X] (11/11/2021) Basic Roles implemented
+- [X] (11/11/2021) Basic Roles implemented
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/admin/list_roles.php
@@ -87,7 +87,7 @@
         - User Roles table (id, user_id, role_id, is_active, created, modified)
       - ![image](https://user-images.githubusercontent.com/90022095/141380599-9d28c70e-239f-406a-b427-70a1b1a0028d.png)
         - Function to check if a user has a specific role 
- [X] (11/11/2021) Site should have basic styles/theme applied; everything should be styled
+- [X] (11/11/2021) Site should have basic styles/theme applied; everything should be styled
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/register.php
@@ -96,7 +96,7 @@
     - Screenshots
       - [image](https://user-images.githubusercontent.com/90022095/141380783-d73523ea-86ef-40d9-a561-0a077828196e.png)
         - Shows styling
- [X] (11/11/2021) Any output messages/errors should be “user friendly”
+- [X] (11/11/2021) Any output messages/errors should be “user friendly”
   -  List of Evidence of Feature Completion
     - Status: ]Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/login.php
@@ -105,7 +105,7 @@
     - Screenshots
       - ![image](https://user-images.githubusercontent.com/90022095/141381079-f971ed9e-bb51-45bb-aa07-6b12c09d1955.png)
         - Below is an example of a user friendly message, for when the user makes a mistake. 
- [X] (11/11/2021) User will be able to see their profile
+- [X] (11/11/2021) User will be able to see their profile
   -  List of Evidence of Feature Completion, Partially working, Incomplete, Pending)
     - Direct Link: https://kg497-prod.herokuapp.com/Project/profile.php
     - Pull Requests
@@ -113,7 +113,7 @@
     - Screenshots
       - ![image](https://user-images.githubusercontent.com/90022095/141381226-251e9fad-7394-40eb-9f83-6221e3cd71df.png)
         - Shows user their email and username
- [X] (11/11/2021) User will be able to edit their profile
+- [X] (11/11/2021) User will be able to edit their profile
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/profile.php
