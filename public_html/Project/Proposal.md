@@ -74,7 +74,7 @@
         - Function to check if user is logged in. This function is only used for pages that need to be logged in. For example, the function has_role uses the is_logged_in function.
       - ![image](https://user-images.githubusercontent.com/90022095/141379569-8dcf9260-2ce3-4d33-b347-181e081f9b76.png)
         - Have roles table
-- [X] (11/11/2021) Basic Roles implemented
+- [X] (11/04/2021) Basic Roles implemented
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/admin/list_roles.php
@@ -88,7 +88,7 @@
         - User Roles table (id, user_id, role_id, is_active, created, modified)
       - ![image](https://user-images.githubusercontent.com/90022095/141380599-9d28c70e-239f-406a-b427-70a1b1a0028d.png)
         - Function to check if a user has a specific role 
-- [X] (11/11/2021) Site should have basic styles/theme applied; everything should be styled
+- [X] (11/09/2021) Site should have basic styles/theme applied; everything should be styled
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/register.php
