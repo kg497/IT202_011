@@ -79,6 +79,7 @@
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/admin/list_roles.php
     - Pull Requests
+      - https://github.com/kg497/IT202_011/pull/31
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
       - ![image](https://user-images.githubusercontent.com/90022095/141380242-0e002136-b144-419a-8bc4-f15b84551614.png)
@@ -92,6 +93,7 @@
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/register.php
     - Pull Requests
+      - https://github.com/kg497/IT202_011/pull/35
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
       - [image](https://user-images.githubusercontent.com/90022095/141380783-d73523ea-86ef-40d9-a561-0a077828196e.png)
@@ -109,7 +111,8 @@
   -  List of Evidence of Feature Completion, Partially working, Incomplete, Pending)
     - Direct Link: https://kg497-prod.herokuapp.com/Project/profile.php
     - Pull Requests
-      -https://github.com/kg497/IT202_011/pull/36
+      - https://github.com/kg497/IT202_011/pull/21
+      - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
       - ![image](https://user-images.githubusercontent.com/90022095/141381226-251e9fad-7394-40eb-9f83-6221e3cd71df.png)
         - Shows user their email and username
