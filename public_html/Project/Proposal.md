@@ -31,14 +31,14 @@
     - Pull Requests
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141377215-2e56875f-8184-4eff-a76d-09195d8e08ed.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719457-4b153da2-a97e-4fbf-a288-5fd76b5a7057.png)
         - Image shows form with username, email, password, confirm password 
-      - ![image](https://user-images.githubusercontent.com/90022095/141377412-bd041010-b7a5-4bff-ac9d-6f32cd119c86.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719502-f2401262-0095-4f05-989a-a8e6f9d41ff0.png)
         - Example of email validation working
-      - ![image](https://user-images.githubusercontent.com/90022095/141377527-bc54e887-110e-4e3a-bb4d-7f07c76cf652.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719572-0f88672f-7dac-4bf0-b432-8b6970cccd9f.png)
         - Gives 'please fill out this field' message to show that username is required
-      - ![image](https://user-images.githubusercontent.com/90022095/141377583-9ce8a0d3-6290-419b-b14b-fc2a36daa35f.png)
-        - Confirm passwords match
+      - ![image](https://user-images.githubusercontent.com/90022095/141719665-e306a3f6-e838-4980-8323-9042717f3af7.png)
+        - After inputting two separate messages, the website tells the user to make sure the passwords match
 - [X] (11/11/2021) User will be able to login to their account (given they enter the correct credentials)
   -  List of Evidence of Feature Completion
     - Status: Completed
@@ -46,13 +46,13 @@
     - Pull Requests
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141378096-513744af-d44c-4e7b-be4b-4c8301682872.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719792-d87e6f60-ec96-4f33-8a2c-1674d0a32368.png)
         - Image shows ability to login with username or email
-      - ![image](https://user-images.githubusercontent.com/90022095/141378370-0fafbd3c-944f-4e71-a93e-572b51c91bf2.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719854-44537b8b-7ea5-44c8-a50a-9276a2c01217.png)
         - Image shows you cannot login without password
-      - ![image](https://user-images.githubusercontent.com/90022095/141378449-0b062f21-434c-4200-8caa-570f1f85f6fc.png)
-        - Outputs an error messages when an account either doesn’t exist
-      - ![image](https://user-images.githubusercontent.com/90022095/141378554-45e50ba0-cb92-4f68-a4ff-6d6a161f5f67.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719951-d795bd2a-791c-43a3-a519-260854202161.png)
+        - Outputs an error messages when an account doesn’t exist
+      - ![image](https://user-images.githubusercontent.com/90022095/141720005-b4881b8b-5177-47e5-bf1d-9bc38cc61cc8.png)
         - Logging in shows users names and give them admin role when I used my admin account. User also ends up at a landing page upon login. This image shows the protected page 'profile' that can only be seen by a logged in user.
 - [X] (11/11/2021) User will be able to logout
   -  List of Evidence of Feature Completion
