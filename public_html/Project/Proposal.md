@@ -57,12 +57,12 @@
 - [X] (11/11/2021) User will be able to logout
   -  List of Evidence of Feature Completion
     - Status: Completed
-    - Direct Link: https://kg497-prod.herokuapp.com/Project/login.php
+    - Direct Link: https://kg497-prod.herokuapp.com/Project/logout.php
     - Pull Requests
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141384930-a8b5b1b4-f85e-4849-a9f5-4407f1372838.png)
-        - After logging out, a message is displayed and the user is redirected to the login page.
+      - ![image](https://user-images.githubusercontent.com/90022095/141720199-c04237bd-0bb8-4810-900b-0d5326f244ee.png)
+        - After logging out, a message is displayed and the user is redirected to the login page. 
 - [X] (11/11/2021) Basic security rules implemented
   -  List of Evidence of Feature Completion
     - Status: Completed
@@ -96,7 +96,7 @@
       - https://github.com/kg497/IT202_011/pull/35
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - [image](https://user-images.githubusercontent.com/90022095/141380783-d73523ea-86ef-40d9-a561-0a077828196e.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141720336-e57ff090-0bc2-4f95-9b78-a134ac711fbb.png)
         - Shows styling
 - [X] (11/11/2021) Any output messages/errors should be “user friendly”
   -  List of Evidence of Feature Completion
@@ -105,8 +105,8 @@
     - Pull Requests
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141381079-f971ed9e-bb51-45bb-aa07-6b12c09d1955.png)
-        - Below is an example of a user friendly message, for when the user makes a mistake. 
+      - ![image](https://user-images.githubusercontent.com/90022095/141720414-6cf5974d-824b-4aae-a955-7adef9c50293.png)
+        - Below is an example of a user friendly message, for when the user makes a mistake by putting in the incorrect password. 
 - [X] (11/11/2021) User will be able to see their profile
   -  List of Evidence of Feature Completion, Partially working, Incomplete, Pending)
     - Direct Link: https://kg497-prod.herokuapp.com/Project/profile.php
@@ -114,7 +114,7 @@
       - https://github.com/kg497/IT202_011/pull/21
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141381226-251e9fad-7394-40eb-9f83-6221e3cd71df.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141720502-49de3663-3922-467e-a8aa-e12d2f6bca63.png)
         - Shows user their email and username
 - [X] (11/11/2021) User will be able to edit their profile
   -  List of Evidence of Feature Completion
@@ -123,8 +123,16 @@
     - Pull Requests
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141381226-251e9fad-7394-40eb-9f83-6221e3cd71df.png)
-        - Shows user their email and username
+      - ![image](https://user-images.githubusercontent.com/90022095/141720822-255ff3e3-20fd-4d4b-94e3-3d0c5ea71b75.png)
+        - When I changed the username to an existing username, the website would not allow it and displays a message so the user knows. 
+      - ![image](https://user-images.githubusercontent.com/90022095/141721101-14229c83-0550-44a9-80be-26d80bf18fcb.png)
+        - Password only resets when the correct password is provided. It displays a "user friendly" message to show that the original password is incorrect.
+       
+            
+      
+Any other fields should be properly validated
+Allow password reset (only if the existing correct password is provided)
+
 - Milestone 2
 - Milestone 3
 - Milestone 4
