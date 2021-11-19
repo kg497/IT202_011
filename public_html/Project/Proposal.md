@@ -31,14 +31,14 @@
     - Pull Requests
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141377215-2e56875f-8184-4eff-a76d-09195d8e08ed.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719457-4b153da2-a97e-4fbf-a288-5fd76b5a7057.png)
         - Image shows form with username, email, password, confirm password 
-      - ![image](https://user-images.githubusercontent.com/90022095/141377412-bd041010-b7a5-4bff-ac9d-6f32cd119c86.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719502-f2401262-0095-4f05-989a-a8e6f9d41ff0.png)
         - Example of email validation working
-      - ![image](https://user-images.githubusercontent.com/90022095/141377527-bc54e887-110e-4e3a-bb4d-7f07c76cf652.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719572-0f88672f-7dac-4bf0-b432-8b6970cccd9f.png)
         - Gives 'please fill out this field' message to show that username is required
-      - ![image](https://user-images.githubusercontent.com/90022095/141377583-9ce8a0d3-6290-419b-b14b-fc2a36daa35f.png)
-        - Confirm passwords match
+      - ![image](https://user-images.githubusercontent.com/90022095/141719665-e306a3f6-e838-4980-8323-9042717f3af7.png)
+        - After inputting two separate messages, the website tells the user to make sure the passwords match
 - [X] (11/11/2021) User will be able to login to their account (given they enter the correct credentials)
   -  List of Evidence of Feature Completion
     - Status: Completed
@@ -46,23 +46,23 @@
     - Pull Requests
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141378096-513744af-d44c-4e7b-be4b-4c8301682872.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719792-d87e6f60-ec96-4f33-8a2c-1674d0a32368.png)
         - Image shows ability to login with username or email
-      - ![image](https://user-images.githubusercontent.com/90022095/141378370-0fafbd3c-944f-4e71-a93e-572b51c91bf2.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719854-44537b8b-7ea5-44c8-a50a-9276a2c01217.png)
         - Image shows you cannot login without password
-      - ![image](https://user-images.githubusercontent.com/90022095/141378449-0b062f21-434c-4200-8caa-570f1f85f6fc.png)
-        - Outputs an error messages when an account either doesn’t exist
-      - ![image](https://user-images.githubusercontent.com/90022095/141378554-45e50ba0-cb92-4f68-a4ff-6d6a161f5f67.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141719951-d795bd2a-791c-43a3-a519-260854202161.png)
+        - Outputs an error messages when an account doesn’t exist
+      - ![image](https://user-images.githubusercontent.com/90022095/141720005-b4881b8b-5177-47e5-bf1d-9bc38cc61cc8.png)
         - Logging in shows users names and give them admin role when I used my admin account. User also ends up at a landing page upon login. This image shows the protected page 'profile' that can only be seen by a logged in user.
 - [X] (11/11/2021) User will be able to logout
   -  List of Evidence of Feature Completion
     - Status: Completed
-    - Direct Link: https://kg497-prod.herokuapp.com/Project/login.php
+    - Direct Link: https://kg497-prod.herokuapp.com/Project/logout.php
     - Pull Requests
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141384930-a8b5b1b4-f85e-4849-a9f5-4407f1372838.png)
-        - After logging out, a message is displayed and the user is redirected to the login page.
+      - ![image](https://user-images.githubusercontent.com/90022095/141720199-c04237bd-0bb8-4810-900b-0d5326f244ee.png)
+        - After logging out, a message is displayed and the user is redirected to the login page. 
 - [X] (11/11/2021) Basic security rules implemented
   -  List of Evidence of Feature Completion
     - Status: Completed
@@ -74,11 +74,12 @@
         - Function to check if user is logged in. This function is only used for pages that need to be logged in. For example, the function has_role uses the is_logged_in function.
       - ![image](https://user-images.githubusercontent.com/90022095/141379569-8dcf9260-2ce3-4d33-b347-181e081f9b76.png)
         - Have roles table
-- [X] (11/11/2021) Basic Roles implemented
+- [X] (11/04/2021) Basic Roles implemented
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/admin/list_roles.php
     - Pull Requests
+      - https://github.com/kg497/IT202_011/pull/31
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
       - ![image](https://user-images.githubusercontent.com/90022095/141380242-0e002136-b144-419a-8bc4-f15b84551614.png)
@@ -87,14 +88,15 @@
         - User Roles table (id, user_id, role_id, is_active, created, modified)
       - ![image](https://user-images.githubusercontent.com/90022095/141380599-9d28c70e-239f-406a-b427-70a1b1a0028d.png)
         - Function to check if a user has a specific role 
-- [X] (11/11/2021) Site should have basic styles/theme applied; everything should be styled
+- [X] (11/09/2021) Site should have basic styles/theme applied; everything should be styled
   -  List of Evidence of Feature Completion
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/register.php
     - Pull Requests
+      - https://github.com/kg497/IT202_011/pull/35
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - [image](https://user-images.githubusercontent.com/90022095/141380783-d73523ea-86ef-40d9-a561-0a077828196e.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141720336-e57ff090-0bc2-4f95-9b78-a134ac711fbb.png)
         - Shows styling
 - [X] (11/11/2021) Any output messages/errors should be “user friendly”
   -  List of Evidence of Feature Completion
@@ -103,15 +105,16 @@
     - Pull Requests
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141381079-f971ed9e-bb51-45bb-aa07-6b12c09d1955.png)
-        - Below is an example of a user friendly message, for when the user makes a mistake. 
+      - ![image](https://user-images.githubusercontent.com/90022095/141720414-6cf5974d-824b-4aae-a955-7adef9c50293.png)
+        - Below is an example of a user friendly message, for when the user makes a mistake by putting in the incorrect password. 
 - [X] (11/11/2021) User will be able to see their profile
   -  List of Evidence of Feature Completion, Partially working, Incomplete, Pending)
     - Direct Link: https://kg497-prod.herokuapp.com/Project/profile.php
     - Pull Requests
-      -https://github.com/kg497/IT202_011/pull/36
+      - https://github.com/kg497/IT202_011/pull/21
+      - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141381226-251e9fad-7394-40eb-9f83-6221e3cd71df.png)
+      - ![image](https://user-images.githubusercontent.com/90022095/141720502-49de3663-3922-467e-a8aa-e12d2f6bca63.png)
         - Shows user their email and username
 - [X] (11/11/2021) User will be able to edit their profile
   -  List of Evidence of Feature Completion
@@ -120,8 +123,11 @@
     - Pull Requests
       - https://github.com/kg497/IT202_011/pull/36
     - Screenshots
-      - ![image](https://user-images.githubusercontent.com/90022095/141381226-251e9fad-7394-40eb-9f83-6221e3cd71df.png)
-        - Shows user their email and username
+      - ![image](https://user-images.githubusercontent.com/90022095/141720822-255ff3e3-20fd-4d4b-94e3-3d0c5ea71b75.png)
+        - When I changed the username to an existing username, the website would not allow it and displays a message so the user knows. 
+      - ![image](https://user-images.githubusercontent.com/90022095/141721101-14229c83-0550-44a9-80be-26d80bf18fcb.png)
+        - Password only resets when the correct password is provided. It displays a "user friendly" message to show that the original password is incorrect.
+       
 - Milestone 2
 - [ ] (mm/dd/yyyy of completion) User with an admin role or shop owner role will be able to add products to inventory
   -  List of Evidence of Feature Completion
@@ -224,6 +230,42 @@
         - Screenshot #1 description explaining what you're trying to show
         
 - Milestone 3
+- [ ] (mm/dd/yyyy of completion) User will be able to purchase items in their Cart
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+- [ ] (mm/dd/yyyy of completion) Order Confirmation Page
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+- [ ] (mm/dd/yyyy of completion) User will be able to see their Purchase History
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
+- [ ] (mm/dd/yyyy of completion) Store Owner will be able to see all Purchase History
+  -  List of Evidence of Feature Completion
+    - Status: Pending (Completed, Partially working, Incomplete, Pending)
+    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+    - Pull Requests
+      - PR link #1 (repeat as necessary)
+    - Screenshots
+      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
+        - Screenshot #1 description explaining what you're trying to show
 - Milestone 4
 ### Intructions
 #### Don't delete this
