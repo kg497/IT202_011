@@ -29,7 +29,7 @@
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/register.php
     - Pull Requests
-      - https://github.com/kg497/IT202_011/pull/36
+      - https://github.com/kg497/IT202_011/pull/58
     - Screenshots
       - ![image](https://user-images.githubusercontent.com/90022095/141719457-4b153da2-a97e-4fbf-a288-5fd76b5a7057.png)
         - Image shows form with username, email, password, confirm password 
@@ -44,7 +44,7 @@
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/login.php
     - Pull Requests
-      - https://github.com/kg497/IT202_011/pull/36
+      - https://github.com/kg497/IT202_011/pull/58
     - Screenshots
       - ![image](https://user-images.githubusercontent.com/90022095/141719792-d87e6f60-ec96-4f33-8a2c-1674d0a32368.png)
         - Image shows ability to login with username or email
@@ -59,7 +59,7 @@
     - Status: Completed
     - Direct Link: https://kg497-prod.herokuapp.com/Project/logout.php
     - Pull Requests
-      - https://github.com/kg497/IT202_011/pull/36
+      - https://github.com/kg497/IT202_011/pull/58
     - Screenshots
       - ![image](https://user-images.githubusercontent.com/90022095/141720199-c04237bd-0bb8-4810-900b-0d5326f244ee.png)
         - After logging out, a message is displayed and the user is redirected to the login page. 
