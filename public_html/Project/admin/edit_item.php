@@ -1,6 +1,6 @@
 <?php
 //note we need to go up 1 more directory
-require(__DIR__ . "/../../partials/nav.php");
+require(__DIR__ . "/../../../partials/nav.php");
 
 if (!has_role("Admin")) {
     flash("You don't have permission to view this page", "warning");
@@ -8,7 +8,7 @@ if (!has_role("Admin")) {
 }
 //update the item
 if (isset($_POST["submit"])) {
-    if (update_data("BGD_Items", $_GET["id"], $_POST)) {
+    if (update_data("Products", $_GET["id"], $_POST)) {
         flash("Updated item", "success");
     }
 }
