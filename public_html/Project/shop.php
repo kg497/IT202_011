@@ -1,49 +1,73 @@
 <?php
+//note we need to go up 1 more directory
 require(__DIR__ . "/../../partials/nav.php");
 
 $results = [];
-$db = getDB();
-$stmt = $db->prepare("SELECT id, name, description, cost, stock, image FROM Products WHERE stock > 0 LIMIT 50");
-try {
-    $stmt->execute();
-    $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    if ($r) {
-        $results = $r;
+    $db = getDB();
+    $stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE name like :name AND visibility ");
+    $stmt2 = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE category = :category AND visibility ORDER BY modified LIMIT 10 ");
+    if (isset($_POST["submit"])) {
+        $stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE name like :name AND visibility ORDER BY unit_price ASC LIMIT 10 ");
+        $stmt2 = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE category = :category AND visibility ORDER BY unit_price ASC LIMIT 10");
     }
-} catch (PDOException $e) {
-    flash("<pre>" . var_export($e, true) . "</pre>");
-}
-?>
-<script>
-    function purchase(item) {
-        console.log("TODO purchase item", item);
-        //TODO create JS helper to update all show-balance elements
+    else if (isset($_POST["submit2"])){
+        $stmt .= $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE name like :name AND visibility ORDER BY unit_price DESC LIMIT 10");
+        $stmt2 = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE category = :category AND visibility ORDER BY unit_price DESC LIMIT 10");
     }
-</script>
+    
+    try {
+        $stmt->execute([":name" => "%" . $_POST["itemName"] . "%"]);
+        $stmt2->execute([":category" => $_POST["itemName"]]);
+        
+        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $s = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+        if ($r) {
+            $results = $r;
+        }
+        else if($s){
+            $results = $s;
+        }
+    }
+    catch (PDOException $e) {
+        flash("<pre>" . var_export($e, true) . "</pre>");
+    }
 
+    
+?>
 <div class="container-fluid">
-    <h1>Shop</h1>
-    <div class="row row-cols-1 row-cols-md-5 g-4">
+    <h1>Order</h1>
+    <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="input-group mb-3">
+            <input class="form-control" type="search" name="itemName" placeholder="Item Filter" />
+            <input class="btn btn-primary" type="submit" value="Search" />
+        </div>
+    </form>
+    <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="input-group mb-3">
+            <input class="btn btn-primary" name= "submit" type="submit" value="Price Ascend" />
+            <input class="btn btn-primary" name = "submit2" type="submit" value=" Price Descend" />
+        </div>
+    </form>
+    
+
+    <?php if (count($results) == 0) : ?>
+        <p>No results to show</p>
+    <?php else : ?>
         <?php foreach ($results as $item) : ?>
             <div class="col">
-                <div class="card bg-dark">
+                <div class="card">
                     <div class="card-header">
-                        Placeholder
+                        <h5 class="card-title"><?php se($item, "name"); ?></h5>
                     </div>
-                    <?php if (se($item, "image", "", false)) : ?>
-                        <img src="<?php se($item, "image"); ?>" class="card-img-top" alt="...">
-                    <?php endif; ?>
-
                     <div class="card-body">
-                        <h5 class="card-title">Name: <?php se($item, "name"); ?></h5>
                         <p class="card-text">Description: <?php se($item, "description"); ?></p>
+                        <a href="details.php?id=<?php se($item, "id"); ?>">Details</a>
                     </div>
                     <div class="card-footer">
-                        Cost: <?php se($item, "cost"); ?>
-                        <button onclick="purchase('<?php se($item, 'id'); ?>')" class="btn btn-primary">Purchase</button>
+                        Cost: $ <?php se($item, "unit_price"); ?>
+                        <button onclick="location.href='cart.php';" class="btn btn-primary">Add to Cart</button>
                     </div>
                 </div>
             </div>
         <?php endforeach; ?>
-    </div>
-</div>
+    <?php endif; ?>

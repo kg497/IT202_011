@@ -70,6 +70,7 @@ require_once(__DIR__ . "/../lib/functions.php");
                 <?php if (is_logged_in()) : ?>
                     <li class="nav-item"><a class="nav-link" href="<?php echo get_url('logout.php'); ?>">Logout</a></li>
                 <?php endif; ?>
+                <li class="nav-item"><a class="nav-link" href="<?php echo get_url('shop.php'); ?>">Order</a></li>
             </ul>
         </div>
     </div>
