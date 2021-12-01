@@ -226,5 +226,37 @@ function update_data($table, $id,  $data, $ignore = ["id", "submit"])
         return false;
     }
 }
-?>
+function add_item_cart($product_id, $user_id, $desired_quantity, $unit_price)
+{
+    error_log("add_item() Product ID: $product_id, User_id: $user_id, Quantity $desired_quantity");
+    //I'm using negative values for predefined items so I can't validate >= 0 for item_id
+    if ($user_id <= 0 ||$user_id <= 0 || $desired_quantity === 0) {
+        
+        return;
+    }
+    $db = getDB();
+    $stmt = $db->prepare("INSERT INTO Cart (product_id, user_id, desired_quantity, unit_price) VALUES (:iid, :uid, :q, :up) ON DUPLICATE KEY UPDATE desired_quantity = desired_quantity + :q");
+    try {
+        //if using bindValue, all must be bind value, can't split between this an execute assoc array
+        $stmt->bindValue(":q", $desired_quantity, PDO::PARAM_INT);
+        $stmt->bindValue(":iid", $product_id, PDO::PARAM_INT);
+        $stmt->bindValue(":uid", $user_id, PDO::PARAM_INT);
+        $stmt->bindValue(":up", $unit_price, PDO::PARAM_INT);
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+        error_log("Error adding $desired_quantity of $product_id to user $user_id: " . var_export($e->errorInfo, true));
+    }
+    return false;
+}
 
+/* change to our version of account*/
+function get_account_balance()
+{
+    if (is_logged_in() && isset($_SESSION["user"]["account"])) {
+        return (int)se($_SESSION["user"]["account"], "balance", 0, false);
+    }
+    return 0;
+}
+
+?>
