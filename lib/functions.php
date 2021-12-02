@@ -241,10 +241,11 @@ function add_item_cart($product_id, $user_id, $desired_quantity, $unit_price)
         $stmt->bindValue(":q", $desired_quantity, PDO::PARAM_INT);
         $stmt->bindValue(":iid", $product_id, PDO::PARAM_INT);
         $stmt->bindValue(":uid", $user_id, PDO::PARAM_INT);
-        $stmt->bindValue(":up", $unit_price, PDO::PARAM_INT);
+        $stmt->bindValue(":up", $unit_price, PDO::PARAM_STR);
         $stmt->execute();
         return true;
     } catch (PDOException $e) {
+        echo "did not work";
         error_log("Error adding $desired_quantity of $product_id to user $user_id: " . var_export($e->errorInfo, true));
     }
     return false;
