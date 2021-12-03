@@ -131,110 +131,65 @@
        
             
       
-Any other fields should be properly validated
-Allow password reset (only if the existing correct password is provided)
+<table><tr><td>Milestone 2</td></tr><tr><td><table><tr><td>F1 - User with an admin role or shop owner role will be able to add products to inventory (2021-11-26)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
 
-- Milestone 2
-- [ ] (mm/dd/yyyy of completion) User with an admin role or shop owner role will be able to add products to inventory
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] (mm/dd/yyyy of completion) Any user will be able to see products with visibility = true on the Shop page
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] (mm/dd/yyyy of completion) Admin/Shop owner will be able to see products with any visibility
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] (mm/dd/yyyy of completion) Admin/Shop owner will be able to edit any product
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] (mm/dd/yyyy of completion) User will be able to click an item from a list and view a full page with more info 
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] (mm/dd/yyyy of completion) User must be logged in for any Cart related activity below
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] (mm/dd/yyyy of completion) User will be able to add items to Cart
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] (mm/dd/yyyy of completion) User will be able to see their cart
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] (mm/dd/yyyy of completion) User will be able to change quantity of items in their cart
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] (mm/dd/yyyy of completion) User will be able to remove a single item from their cart vai button click
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-- [ ] (mm/dd/yyyy of completion) User will be able to clear their entire cart via a button click
-  -  List of Evidence of Feature Completion
-    - Status: Pending (Completed, Partially working, Incomplete, Pending)
-    - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-    - Pull Requests
-      - PR link #1 (repeat as necessary)
-    - Screenshots
-      - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-        - Screenshot #1 description explaining what you're trying to show
-        
+ [https://kg497-prod.herokuapp.com/Project/admin/add_item.php](https://kg497-prod.herokuapp.com/Project/admin/add_item.php)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/59](https://github.com/kg497/IT202_011/pull/59)</p></td></tr><tr><td><table><tr><td>F1 - Table should be called Products (id, name, description, category, stock, created, modified, unit_price, visibility [true, false])<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144547495-2529dbe1-95ed-4214-bbec-75efd7bd3b0a.png"><p>Products table has all the required data</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144549595-c8060514-2c0b-45ad-a53c-6d6d1f803f4f.png"><p>Form where admin can add item to Products table</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144549776-09e3c746-d812-4b9e-b426-9e45184dcd6c.png"><p>A normal user cannot add an item to Products table. </td></tr></td></tr></table></td></tr><table><tr><td>F2 - Any user will be able to see products with visibility = true on the Shop page (2021-11-28)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/shop.php](https://kg497-prod.herokuapp.com/Project/shop.php)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/60](https://github.com/kg497/IT202_011/pull/60)</p><p>
+
+ [https://github.com/kg497/IT202_011/pull/65](https://github.com/kg497/IT202_011/pull/65)</p></td></tr><tr><td><table><tr><td>F2 - Product list page will be public (i.e. doesn’t require login)<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144569071-f4c47f6f-ad34-4db8-87a4-808c39e4d04e.png"><p>No one is logged into the website, but the shop page is still visible with all products shown. </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F2 - For now limit results to 10 most recent<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144569228-08a89a60-77ca-4c71-8422-44cb14da721d.png"><p>The initial shop page limits the items to 10 and uses Order By Modified Desc to get the most recently updated items. </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F2 - User will be able to filter results by category<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144569582-71e51d35-d112-4cca-922f-9fb6118b6822.png"><p>After searching the category 'dessert', only products from the table with that category get displayed to the user. In this example, the user can see products like ice cream, apple pie, cookie, and cheesecake.</td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F2 - User will be able to filter results by partial matches on the name<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144569843-dc9ca3b8-b948-40bf-b4d3-4fe1ab228e3d.png"><p>When searching for 'ham', the shop shows all items that have 'ham' in it. So, this displays 'hamburger' and 'ham sandwich'.</td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F2 - User will be able to sort results by price<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144570077-cee13918-fb91-44ca-bf12-71c1801dc272.png"><p>After clicking the 'Price Ascend' button, it is clear in the screenshot that the first item has the smallest price and it increases in order. </td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144570333-0d2833a8-b1c0-42b4-bf50-b6ca08064b81.png"><p>After clicking the 'Price Descend' button, it is clear in the screenshot that the first item has the largest price and it decreases in order. </td></tr></td></tr></table></td></tr><table><tr><td>F3 - Admin/Shop owner will be able to see products with any visibility (2021-11-26)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/admin/list_items.php](https://kg497-prod.herokuapp.com/Project/admin/list_items.php)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/59](https://github.com/kg497/IT202_011/pull/59)</p></td></tr><tr><td><table><tr><td>F3 - This should be a separate page from Shop, but will be similar<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144571246-5b571087-d9f1-4102-894a-3b1fea8e6a02.png"><p>The List items page allows admin to see any item with any visibility. In the screenshot, two items are shown when searching for 'chicken', including the product with visibility 0.</td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F3 - This page should only be accessible to the appropriate role(s<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144571519-66a88193-b688-4d7b-bafe-5a68af7b2294.png"><p>This code snippet shows a check to make sure the user is an admin, before allowing them to see this page. </td></tr></td></tr></table></td></tr><table><tr><td>F4 - Admin/Shop owner will be able to edit any product (2021-12-03)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/admin/list_items.php](https://kg497-prod.herokuapp.com/Project/admin/list_items.php)</p><p>
+
+ [https://kg497-prod.herokuapp.com/Project/admin/edit_item.php?id=4](https://kg497-prod.herokuapp.com/Project/admin/edit_item.php?id=4)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/59](https://github.com/kg497/IT202_011/pull/59)</p><p>
+
+ [https://github.com/kg497/IT202_011/pull/68](https://github.com/kg497/IT202_011/pull/68)</p></td></tr><tr><td><table><tr><td>F4 - Edit button should be accessible for the appropriate role(s) anywhere a product is shown (Shop list, Product Details Page, etc)<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144572085-a1083f5d-5410-4829-90b0-62f1a0a3b3ba.png"><p>Example of form for admin to update the data in the Products table</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144572315-69e8b9d6-c0c5-4b5b-aef5-891104a4dd11.png"><p>When seeing the products listed, the admin can click the EDIT link, which will take them to the edit item form. </td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144633486-c9217556-1b54-42c4-aefa-f3383b6dd1a0.png"><p>When seeing the shop page, only admin users also have the ability to click the edit link</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144633575-96c3d2bb-544b-4ed5-98aa-d514bd8d6abe.png"><p>When going to an Item's Detail Page, admins have an edit button. </td></tr></td></tr></table></td></tr><table><tr><td>F5 - User will be able to click an item from a list and view a full page with more info about the item (Product Details Page) ()</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/details.php](https://kg497-prod.herokuapp.com/Project/details.php)</p><p>
+
+ [https://kg497-prod.herokuapp.com/Project/details.php?id=16](https://kg497-prod.herokuapp.com/Project/details.php?id=16)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/60](https://github.com/kg497/IT202_011/pull/60)</p></td></tr><tr><td><table><tr><td>F5 - <tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144573188-343572c1-4a41-4e73-8f15-8b48a03c4dc9.png"><p>The detail link on each item in the shop, allows the user to look at more details about that specific product. </td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144573073-834b3b8e-6f84-4887-a887-577522b70694.png"><p>Item Detail Page gives user more information about the Product. </td></tr></td></tr></table></td></tr><table><tr><td>F6 - User must be logged in for any Cart related activity below (2021-12-01)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/cart.php](https://kg497-prod.herokuapp.com/Project/cart.php)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/61](https://github.com/kg497/IT202_011/pull/61)</p></td></tr><tr><td><table><tr><td>F6 - <tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144573659-5d8e9493-8650-4676-9459-95b645ad8d3e.png"><p>When logged out, going to the cart link prints the message "You must be logged in to view this page" and redirects the user back to the login page. </td></tr></td></tr></table></td></tr><table><tr><td>F7 - User will be able to add items to Cart (2021-12-01)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/shop.php](https://kg497-prod.herokuapp.com/Project/shop.php)</p><p>
+
+ [https://kg497-prod.herokuapp.com/Project/add_cart.php?id=17unit_price=5.87](https://kg497-prod.herokuapp.com/Project/add_cart.php?id=17unit_price=5.87)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/61](https://github.com/kg497/IT202_011/pull/61)</p></td></tr><tr><td><table><tr><td>F7 - Cart will be table-based (id, product_id, user_id, desired_quantity, unit_cost, created, modified)<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144574759-2fdb0e1d-7331-4635-a971-49ef23c0144e.png"><p>Cart table created with correct columns</td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F7 - Adding items to Cart will not affect the Product's quantity in the Products table<tr><td>Status: completed</td></tr><tr><td><img width="100%" src=""><p>Adding item to a cart has no correlation with the quantity in the Products table</td></tr></td></tr></table></td></tr><table><tr><td>F8 - User will be able to see their cart (2021-12-02)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/cart.php](https://kg497-prod.herokuapp.com/Project/cart.php)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/61](https://github.com/kg497/IT202_011/pull/61)</p></td></tr><tr><td><table><tr><td>F8 - List all the items<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144575377-edb28d87-e864-4f2c-8633-4665e6c2f227.png"><p>The Cart shows all the items a user added to cart</td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - Show subtotal for each line item based on desired_quantity * unit_cost<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144575377-edb28d87-e864-4f2c-8633-4665e6c2f227.png"><p>For the example Fried Chicken, quantity =4 and unit price = $5.87. The Cart correctly shows the total as being $23.48</td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - Show total cart value (sum of line item subtotals)<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144575692-e424b5c8-b145-46cc-9ce8-65505b962436.png"><p>Summation of all total from each cart item is added together and displayed at bottom of cart. </td></tr></td></tr></table></td></tr><tr><td><table><tr><td>F8 - Will be able to click an item to see more details (Product Details Page)<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144575377-edb28d87-e864-4f2c-8633-4665e6c2f227.png"><p>The details link is in each cart item, which takes the user to the Item's Detail Page</td></tr></td></tr></table></td></tr><table><tr><td>F9 - User will be able to change quantity of items in their cart (2021-12-02)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/cart.php](https://kg497-prod.herokuapp.com/Project/cart.php)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/62](https://github.com/kg497/IT202_011/pull/62)</p><p>
+
+ [https://github.com/kg497/IT202_011/pull/61](https://github.com/kg497/IT202_011/pull/61)</p></td></tr><tr><td><table><tr><td>F9 - Quantity of 0 should also remove from cart<tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144576674-ea3da6f5-e00c-4176-822d-0b382570f87e.png"><p>User can update the desired quantity through the form. This also updates the information in the cart data. </td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144576843-175a808c-217d-4cd2-bed0-5803b118ee5a.png"><p>After inserting a 0 into the quantity form, Fried Chicken is removed from the cart screen. </td></tr></td></tr></table></td></tr><table><tr><td>F10 - User will be able to remove a single item from their cart via button click (2021-12-02)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/cart.php](https://kg497-prod.herokuapp.com/Project/cart.php)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/61](https://github.com/kg497/IT202_011/pull/61)</p></td></tr><tr><td><table><tr><td>F10 - <tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144577339-22eff6d7-b2dd-46a3-b476-66955d85f643.png"><p>Each item in the cart has a 'Delete Item' button shown above. When clicked, the cart table will be updated to not include that product and the user will no longer see it visible on the screen </td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144577610-aa01c0e2-e051-4832-9729-7fd09dd7353a.png"><p>This snippet shows how the Post request from the delete button will delete from the Cart table where the User and Product are equal to the current user and the product is the one associated with the delete button. </td></tr></td></tr></table></td></tr><table><tr><td>F11 - User will be able to clear their entire cart via a button click (2021-12-02)</td></tr><tr><td>Status: complete</td></tr><tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/cart.php](https://kg497-prod.herokuapp.com/Project/cart.php)</p></td></tr><tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/61](https://github.com/kg497/IT202_011/pull/61)</p></td></tr><tr><td><table><tr><td>F11 - <tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144578051-d1c15c9b-9b3d-4353-b2cd-ecb0c2bed15d.png"><p>Screenshot shows a button that can Clear Cart. </td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144578125-4a512eb6-da7d-42e6-930c-3a92a942f837.png"><p>This snippet shows that if the clear button is clicked, all data is removed from the Cart table where the user equals the current user. </td></tr></td></tr></table></td></tr></td></tr></table>
+
+- Milestone 2        
 - Milestone 3
 - Milestone 4
 ### Intructions
