@@ -92,6 +92,9 @@ $results = [];
                     </div>
                 </div>
             </div>
+            <?php if(has_role("Admin")) : ?>
+            <a href="admin/edit_item.php?id=<?php se($item, "id"); ?>">Edit</a>
+            <?php endif; ?>
         <?php endforeach; ?>
     <?php endif; ?>
 
