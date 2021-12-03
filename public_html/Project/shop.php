@@ -4,8 +4,8 @@ require(__DIR__ . "/../../partials/nav.php");
 
 $results = [];
     $db = getDB();
-    $stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE name like :name AND visibility ORDER BY modified LIMIT 10");
-    $stmt2 = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE category = :category AND visibility ORDER BY modified LIMIT 10");
+    $stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE name like :name AND visibility ORDER BY modified DESC LIMIT 10");
+    $stmt2 = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE category = :category AND visibility ORDER BY modified DESC LIMIT 10");
     if (isset($_POST["submit"])) {
         $stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE name like :name AND visibility ORDER BY unit_price ASC LIMIT 20");
         $stmt2 = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE category = :category AND visibility ORDER BY unit_price ASC LIMIT 20");
@@ -84,14 +84,11 @@ $results = [];
                         <h5 class="card-title"><?php se($item, "name"); ?></h5>
                     </div>
                     <div class="card-body">
-                        <p class="card-text"> Quantity <?php se($item, "desired_quantity"); ?></p>
                         <a href="details.php?id=<?php se($item, "id");?>">Details</a>
                     </div>
                     <div class="card-footer">
                         Cost: $ <?php se($item, "unit_price"); ?>
                         <input type=button onClick="location.href='add_cart.php?id=<?php se($item, "id");?>unit_price=<?php se($item, "unit_price");?>'" class = "btn btn-primary" value='Add to Cart'>
-                        <!--<button onclick= "addToCart('<?php se($item, 'id'); ?>','<?php se($item, 'unit_price'); ?>')" class="btn btn-primary">Add to Cart</button>
-        -->
                     </div>
                 </div>
             </div>
