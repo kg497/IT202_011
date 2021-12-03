@@ -39,6 +39,11 @@ function mapColumn($col)
                     <label class="form-control" for ="<?php se($value); ?>"> <?php se($value); ?>  </label>
                     
                 </div>
+                
             <?php endif; ?>
+            
         <?php endforeach; ?>
+        <?php if(has_role("Admin")) : ?>
+            <a href="admin/edit_item.php?id=<?php se($id); ?>">Edit</a>
+        <?php endif; ?>
 </div>
