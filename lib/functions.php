@@ -278,4 +278,5 @@ function add_order( $user_id, $total_price, $address, $payment_method)
     }
     return false;
 }
+
 ?>
