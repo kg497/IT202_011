@@ -301,5 +301,11 @@ function add_order_items( $order_id, $product_id, $quantity, $unit_price)
     }
     return false;
 }
+function redirect($url) {
+    ob_start();
+    header('Location: '.$url);
+    ob_end_flush();
+    die();
+}
 
 ?>

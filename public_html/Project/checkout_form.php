@@ -86,7 +86,7 @@ if (isset($_POST["address"]) && isset($_POST["payment"])) {
               flash("<pre>" . var_export($e, true) . "</pre>");
             }
         }
-
+        
         $stmt4 = $db->prepare("DELETE from Cart WHERE user_id = :user_id");
         try {
             $stmt4->execute([":user_id" => $user_id]);
