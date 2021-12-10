@@ -5,7 +5,6 @@ is_logged_in(true);
 <?php
 // go to cart and go to speccific user, get product_id - go to Products table to get name, get quantity, and unit_price
 // go to Products table to get the name of the item,
-$bad =0;
 $total=0;
 $res = [];
 $columns = get_columns("Cart");
@@ -86,6 +85,9 @@ function mapColumn($col)
             <input class="btn btn-primary" name = "clear" type="submit" value="Clear Cart" />
         </div>              
     </form>
+    <div class="mb-4">
+        <input type=button onClick="location.href='checkout_form.php'" class = "btn btn-primary" value='Purchase'>
+    </div>   
     <?php foreach ($result as $item) : ?>
 
         <?php 
@@ -122,7 +124,6 @@ function mapColumn($col)
                             <input class="btn btn-primary" name = "deletion" type="submit" value="Delete Item" />
                         </div>
                         </form>
-                        <input type=button onClick="location.href='add_cart.php?id=<?php se($item, "id");?>unit_price=<?php se($item, "unit_price");?>'" class = "btn btn-primary" value='Purchase'>
                     </div>
                 </div>
             </div>
