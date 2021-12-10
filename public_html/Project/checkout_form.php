@@ -86,7 +86,7 @@ if (isset($_POST["address"]) && isset($_POST["payment"])) {
               flash("<pre>" . var_export($e, true) . "</pre>");
             }
         }
-
+        
         $stmt4 = $db->prepare("DELETE from Cart WHERE user_id = :user_id");
         try {
             $stmt4->execute([":user_id" => $user_id]);
@@ -94,6 +94,7 @@ if (isset($_POST["address"]) && isset($_POST["payment"])) {
         catch (PDOException $e) {
             flash("<pre>" . var_export($e, true) . "</pre>");
         }
+        redirect('order_confirmation.php?id='.$order_id);
         
         
     }
@@ -103,7 +104,7 @@ if (isset($_POST["address"]) && isset($_POST["payment"])) {
 ?>
 <div class="container-fluid">
     <h1>Checkout Form</h1>
-    <form onsubmit=true method="POST" action ='order_confirmation.php'>
+    <form onsubmit=true method="POST" >
         <div class="mb-4">
             <input type=button onClick="location.href='cart.php'" class = "btn btn-primary" value='Update Cart'>
         </div>  
@@ -157,8 +158,8 @@ if (isset($_POST["address"]) && isset($_POST["payment"])) {
             <label class="form-label" for="total">Payment Total</label>
             <input class="form-control" type="number" step = "0.01" id="total" name="total" required />
         </div>
-        <!--<input type=button onClick="location.href='order_confirmation.php'" class = "btn btn-primary" value='Purchase'>-->
-        <input type="submit" class="mt-3 btn btn-primary" value="Purchase" />
+        <input type="submit"  class = "btn btn-primary" value='Purchase'>
+       
     </form>
 </div>
 <?php
