@@ -14,7 +14,6 @@ $result=[];
 $db = getDB();
 $user_id = get_user_id();
 $stmt = $db->prepare("SELECT Cart.user_id, Cart.product_id, Cart.desired_quantity, Cart.unit_price, Products.name FROM Cart INNER JOIN Products ON Cart.product_id = Products.id WHERE Cart.user_id = :user_id");
-//$stmt2 = $db->prepare("SELECT id, name from Products WHERE user_id = :user_id");
 if (isset($_POST["deletion"])) {
     $p = se($_POST, "product_id", -1, false);
     $stmt3 = $db->prepare("DELETE from Cart WHERE product_id = :product_id AND user_id = :u_id");

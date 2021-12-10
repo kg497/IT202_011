@@ -263,10 +263,10 @@ function add_order( $user_id, $total_price, $address, $payment_method)
     }
     $db = getDB();
     $stmt = $db->prepare("INSERT INTO Orders (user_id, total_price, address, payment_method) VALUES (:uid, :tot, :add, :pay)");
-   // $stmt = $db->prepare("INSERT INTO Cart (product_id, user_id, desired_quantity, unit_price) VALUES (:iid, :uid, :q, :up) ON DUPLICATE KEY UPDATE desired_quantity = desired_quantity + :q");
+   
     try {
         //if using bindValue, all must be bind value, can't split between this an execute assoc array
-        $stmt->bindValue(":uid", $user_id, PDO::PARAM_STR);
+        $stmt->bindValue(":uid", $user_id, PDO::PARAM_INT);
         $stmt->bindValue(":tot", $total_price, PDO::PARAM_STR);
         $stmt->bindValue(":add", $address, PDO::PARAM_STR);
         $stmt->bindValue(":pay", $payment_method, PDO::PARAM_STR);
@@ -278,4 +278,28 @@ function add_order( $user_id, $total_price, $address, $payment_method)
     }
     return false;
 }
+function add_order_items( $order_id, $product_id, $quantity, $unit_price)
+{
+    error_log("add_item() Product ID: $product_id,  Quantity $quantity");
+    if ($product_id <= 0 || $order_id <= 0 || $quantity === 0) {
+        
+        return;
+    }
+    $db = getDB();
+    $stmt = $db->prepare("INSERT INTO OrderItems (order_id, product_id, quantity, unit_price) VALUES (:oid, :iid, :q, :up) ");
+    try {
+        //if using bindValue, all must be bind value, can't split between this an execute assoc array
+        $stmt->bindValue(":oid", $order_id, PDO::PARAM_INT);
+        $stmt->bindValue(":q", $quantity, PDO::PARAM_INT);
+        $stmt->bindValue(":iid", $product_id, PDO::PARAM_INT);
+        $stmt->bindValue(":up", $unit_price, PDO::PARAM_STR);
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+        echo "did not work";
+        error_log("Error adding $quantity of $product_id  " . var_export($e->errorInfo, true));
+    }
+    return false;
+}
+
 ?>
