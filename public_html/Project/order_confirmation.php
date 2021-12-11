@@ -1,5 +1,5 @@
 <?php
-
+is_logged_in(true);
 require(__DIR__."/../../partials/nav.php");
 $db = getDB();
 $result=[];
