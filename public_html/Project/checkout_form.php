@@ -1,6 +1,7 @@
 <?php
 //note we need to go up 1 more directory
 require(__DIR__ . "/../../partials/nav.php");
+is_logged_in(true);
 $result=[];
 $db = getDB();
 $user_id = get_user_id();
