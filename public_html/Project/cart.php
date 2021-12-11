@@ -5,7 +5,6 @@ is_logged_in(true);
 <?php
 // go to cart and go to speccific user, get product_id - go to Products table to get name, get quantity, and unit_price
 // go to Products table to get the name of the item,
-$bad =0;
 $total=0;
 $res = [];
 $columns = get_columns("Cart");
@@ -15,7 +14,6 @@ $result=[];
 $db = getDB();
 $user_id = get_user_id();
 $stmt = $db->prepare("SELECT Cart.user_id, Cart.product_id, Cart.desired_quantity, Cart.unit_price, Products.name FROM Cart INNER JOIN Products ON Cart.product_id = Products.id WHERE Cart.user_id = :user_id");
-//$stmt2 = $db->prepare("SELECT id, name from Products WHERE user_id = :user_id");
 if (isset($_POST["deletion"])) {
     $p = se($_POST, "product_id", -1, false);
     $stmt3 = $db->prepare("DELETE from Cart WHERE product_id = :product_id AND user_id = :u_id");
@@ -86,6 +84,9 @@ function mapColumn($col)
             <input class="btn btn-primary" name = "clear" type="submit" value="Clear Cart" />
         </div>              
     </form>
+    <div class="mb-4">
+        <input type=button onClick="location.href='checkout_form.php'" class = "btn btn-primary" value='Purchase'>
+    </div>   
     <?php foreach ($result as $item) : ?>
 
         <?php 
@@ -122,7 +123,6 @@ function mapColumn($col)
                             <input class="btn btn-primary" name = "deletion" type="submit" value="Delete Item" />
                         </div>
                         </form>
-                        <input type=button onClick="location.href='add_cart.php?id=<?php se($item, "id");?>unit_price=<?php se($item, "unit_price");?>'" class = "btn btn-primary" value='Purchase'>
                     </div>
                 </div>
             </div>
