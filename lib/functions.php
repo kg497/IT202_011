@@ -257,7 +257,7 @@ function add_order( $user_id, $total_price, $address, $payment_method)
 {
     //error_log("add_item() Product ID: $product_id, User_id: $user_id, Quantity $desired_quantity");
     //I'm using negative values for predefined items so I can't validate >= 0 for item_id
-    if ($user_id <= 0 ||$total_price < 0 ) {
+    if ($user_id <= 0 ||$total_price <= 0 ) {
         
         return;
     }
