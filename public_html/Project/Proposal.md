@@ -188,6 +188,253 @@
  [https://kg497-prod.herokuapp.com/Project/cart.php](https://kg497-prod.herokuapp.com/Project/cart.php)</p></td></tr><tr><td>PRs:<p>
 
  [https://github.com/kg497/IT202_011/pull/61](https://github.com/kg497/IT202_011/pull/61)</p></td></tr><tr><td><table><tr><td>F11 - <tr><td>Status: completed</td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144578051-d1c15c9b-9b3d-4353-b2cd-ecb0c2bed15d.png"><p>Screenshot shows a button that can Clear Cart. </td></tr><tr><td><img width="100%" src="https://user-images.githubusercontent.com/90022095/144578125-4a512eb6-da7d-42e6-930c-3a92a942f837.png"><p>This snippet shows that if the clear button is clicked, all data is removed from the Cart table where the user equals the current user. </td></tr></td></tr></table></td></tr></td></tr></table>
+  
+
+<table>
+<tr><td>Milestone 3</td></tr><tr><td>
+<table>
+<tr><td>F1 - User will be able to purchase items in their Cart (2021-12-10)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/checkout_form.php](https://kg497-prod.herokuapp.com/Project/checkout_form.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/81](https://github.com/kg497/IT202_011/pull/81)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F1 - Create an Orders table (id, user_id, created, total_price, address, payment_method)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145661279-45a15cab-853d-4077-856c-a40cba993404.png">
+<p>Orders table with correct columns that included total price, an address and payment method</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F1 - Create an OrderItems table (id, order_id, product_id, quantity, unit_price)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145661305-56925ebe-5f01-473f-962d-af90c79bef30.png">
+<p>Order Item Table with correct columns that were similar to the Cart table</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F1 - Checkout Form</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145665794-ec6921c0-922e-4712-a2f0-7ac43719627e.png">
+<p>Checkout form asks for address , payment method, and numerical value check </p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145663270-4e12751b-42d3-42cd-8f12-e314843779a4.png">
+<p>The image shows that you cannot submit the form without filling out all fields (except apartment is not required).</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F1 - User will be asked for their Address for shipping purposes</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145661370-1a98bb2d-7657-42f8-b711-2a0d8a7db6fc.png">
+<p>All of the fields above are concatenated to be the address value in the Order table. </p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145663421-8b7b4d21-f00c-48bc-a1ad-d9163986d154.png">
+<p>This code snippet shows that the type on the input for the street number is "number". This makes sure that the user can only enter 0-9 on the keyboard. </p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145663473-9e68e0ec-e601-4740-be26-0b66eaa553cc.png">
+<p>When a user inputs a zip code that is not 5 digits, the error message "Enter a valid zip code" is shown. The type for the zip code is also set to "number" so that only 0-9 can be entered by the user.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F1 - Order process</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145663713-ec5cab01-4e78-4618-bece-f4e59486d639.png">
+<p>The screenshot shows both a cart total price and a product price. This way if the shop owner changes the price after it's added to the cart, the new price will be used. The user will also be aware of the change in price. 
+Shows Verification of the current product price against the Products table
+</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145663771-c255174e-6dc5-448c-8bdf-817abc1992f8.png">
+<p>This image shows the stock amount for cookie being 4 before the purchase is made. </p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145663853-1abb6b92-b4da-4579-83da-5d9c3e594cb8.png">
+<p>After a purchase goes through of 3 cookies, the stock amount is now 1. 
+Shows Update the Products table Stock for each item to deduct the Ordered Quantity
+
+</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145663898-f0d02bd7-186a-4860-aa22-84d12554db63.png">
+<p>After purchase goes through, the cart is cleared</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145664760-a2a86f58-6d55-4e97-afd0-92a5d2e9a044.png">
+<p>If a user tries to purchase more than is in stock, it displays a message and does not let the purchase go through.
+Shows verification of desired product and desired quantity are still available in the Products table
+</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F2 - Order Confirmation Page (2021-12-10)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/order_confirmation.php?id=33](https://kg497-prod.herokuapp.com/Project/order_confirmation.php?id=33)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/82](https://github.com/kg497/IT202_011/pull/82)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F2 - Show the entire order details from the Order and OrderItems table (similar to cart)/Displays a Thank you message</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145663836-8a24b97a-d29a-492d-8437-1827af453048.png">
+<p>The Confirmation page shows information from both the Order and OrderItems tables. The Order table give us the address, total price, and payment method. The OrderItems than shows us each item that was purchased, the item cost, and how much of that item was bought. It also has a thank you message displayed. </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F3 - User will be able to see their Purchase History (2021-12-10)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/user_history.php](https://kg497-prod.herokuapp.com/Project/user_history.php)</p><p>
+
+ [https://kg497-prod.herokuapp.com/Project/order_details.php?id=52](https://kg497-prod.herokuapp.com/Project/order_details.php?id=52)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/83](https://github.com/kg497/IT202_011/pull/83)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F3 - For now limit to 10 most recent orders</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145665405-738ab2ca-80c9-4e02-87a9-020d89199a67.png">
+<p>User can see last 10 most recent orders
+</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F3 - A list item can be clicked to view the full details in the Order Details Page (similar to Order Confirmation Page except no “Thank you” message)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145665429-d9492e25-dc80-4345-b2f2-69848ce75cdf.png">
+<p>User can click 'Details' button which will redirect them to a page that looks like the one above. The information changes depending on which order is clicked. </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F4 - Store Owner will be able to see all Purchase History ()</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/admin/purchase_history.php](https://kg497-prod.herokuapp.com/Project/admin/purchase_history.php)</p><p>
+
+ [https://kg497-prod.herokuapp.com/Project/order_details.php?id=53](https://kg497-prod.herokuapp.com/Project/order_details.php?id=53)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/84](https://github.com/kg497/IT202_011/pull/84)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F4 - For now limit to 10 most recent orders</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145665571-447033f6-4189-45df-b858-3de21a78997c.png">
+<p>Admin can see all users purchases, sorted by 10 most recent</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F4 - A list item can be clicked to view the full details in the Order Details Page (similar to Order Confirmation Page except no “Thank you” message)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/145665620-57e7eafc-d6e6-4f63-b887-bca1beb7040f.png">
+<p>Admin can click order detail for more information about a specific purchase. </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr></td></tr></table>
 
 - Milestone 2        
 - Milestone 3
