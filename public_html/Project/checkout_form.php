@@ -40,17 +40,17 @@ if (isset($_POST["address"]) && isset($_POST["payment"])) {
     $payment_method = se($_POST, "payment", "", false);
     $total_price= se($_POST, "total", 0, false);
     
+    $hasError = false;
+    if(strlen($zip)!=5){
+      flash("Enter valid zip code", "danger");
+      $hasError= true;
+    }
+
     foreach($result as $item){
         if($item["desired_quantity"] > $item["stock"]){
             $hasError = True;
             flash( $item["name"] . " only has a stock of ". $item["stock"], "warning");
         }
-    }
-   
-    $hasError = false;
-    if(strlen($zip)!=5){
-      flash("Enter valid zip code", "danger");
-      $hasError= true;
     }
 
     if($actual_price != $total_price){
