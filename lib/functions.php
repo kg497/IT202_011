@@ -77,6 +77,7 @@ function get_user_id()
     }
     return false;
 }
+
 //TODO 4: Flash Message Helpers
 function flash($msg = "", $color = "info")
 {
@@ -230,7 +231,7 @@ function add_item_cart($product_id, $user_id, $desired_quantity, $unit_price)
 {
     error_log("add_item() Product ID: $product_id, User_id: $user_id, Quantity $desired_quantity");
     //I'm using negative values for predefined items so I can't validate >= 0 for item_id
-    if ($user_id <= 0 ||$user_id <= 0 || $desired_quantity === 0) {
+    if ($product_id <= 0 || $user_id <= 0 || $desired_quantity === 0) {
         
         return;
     }
@@ -251,13 +252,60 @@ function add_item_cart($product_id, $user_id, $desired_quantity, $unit_price)
     return false;
 }
 
-/* change to our version of account*/
-function get_account_balance()
+
+function add_order( $user_id, $total_price, $address, $payment_method)
 {
-    if (is_logged_in() && isset($_SESSION["user"]["account"])) {
-        return (int)se($_SESSION["user"]["account"], "balance", 0, false);
+    //error_log("add_item() Product ID: $product_id, User_id: $user_id, Quantity $desired_quantity");
+    //I'm using negative values for predefined items so I can't validate >= 0 for item_id
+    if ($user_id <= 0 ||$total_price < 0 ) {
+        
+        return;
     }
-    return 0;
+    $db = getDB();
+    $stmt = $db->prepare("INSERT INTO Orders (user_id, total_price, address, payment_method) VALUES (:uid, :tot, :add, :pay)");
+   
+    try {
+        //if using bindValue, all must be bind value, can't split between this an execute assoc array
+        $stmt->bindValue(":uid", $user_id, PDO::PARAM_INT);
+        $stmt->bindValue(":tot", $total_price, PDO::PARAM_STR);
+        $stmt->bindValue(":add", $address, PDO::PARAM_STR);
+        $stmt->bindValue(":pay", $payment_method, PDO::PARAM_STR);
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+        echo "did not work";
+        //error_log("Error adding $desired_quantity of $product_id to user $user_id: " . var_export($e->errorInfo, true));
+    }
+    return false;
+}
+function add_order_items( $order_id, $product_id, $quantity, $unit_price)
+{
+    error_log("add_item() Product ID: $product_id,  Quantity $quantity");
+    if ($product_id <= 0 || $order_id <= 0 || $quantity === 0) {
+        
+        return;
+    }
+    $db = getDB();
+    $stmt = $db->prepare("INSERT INTO OrderItems (order_id, product_id, quantity, unit_price) VALUES (:oid, :iid, :q, :up) ");
+    try {
+        //if using bindValue, all must be bind value, can't split between this an execute assoc array
+        $stmt->bindValue(":oid", $order_id, PDO::PARAM_INT);
+        $stmt->bindValue(":q", $quantity, PDO::PARAM_INT);
+        $stmt->bindValue(":iid", $product_id, PDO::PARAM_INT);
+        $stmt->bindValue(":up", $unit_price, PDO::PARAM_STR);
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+        echo "did not work";
+        error_log("Error adding $quantity of $product_id  " . var_export($e->errorInfo, true));
+    }
+    return false;
+}
+function redirect($url) {
+    ob_start();
+    header('Location: '.$url);
+    ob_end_flush();
+    die();
 }
 
 ?>
