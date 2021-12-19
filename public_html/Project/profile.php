@@ -137,27 +137,7 @@ try {
             <a class="btn btn-primary" href="?edit=true">Edit</a>
         <?php endif; ?>
     <?php endif; ?>
-    <div>
-        Best Score: <?php echo get_best_score($user_id); ?>
-    </div>
-    <div>
-        <?php $scores = get_latest_scores($user_id); ?>
-        <h3>Score History</h3>
-        <table class="table text-light">
-            <thead>
-                <th>Score</th>
-                <th>Time</th>
-            </thead>
-            <tbody>
-                <?php foreach ($scores as $score) : ?>
-                    <tr>
-                        <td><?php se($score, "score", 0); ?></td>
-                        <td><?php se($score, "created", "-"); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+    
     <?php if (!$edit) : ?>
         <div>Username: <?php se($username); ?></div>
         <div>Joined: <?php se($created); ?></div>
@@ -227,6 +207,3 @@ try {
         return isValid;
     }
 </script>
-<?php
-require_once(__DIR__ . "/../../partials/footer.php");
-?>

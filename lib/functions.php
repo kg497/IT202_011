@@ -273,7 +273,6 @@ function add_order( $user_id, $total_price, $address, $payment_method)
         $stmt->execute();
         return true;
     } catch (PDOException $e) {
-        echo "did not work";
         //error_log("Error adding $desired_quantity of $product_id to user $user_id: " . var_export($e->errorInfo, true));
     }
     return false;
@@ -296,8 +295,28 @@ function add_order_items( $order_id, $product_id, $quantity, $unit_price)
         $stmt->execute();
         return true;
     } catch (PDOException $e) {
-        echo "did not work";
         error_log("Error adding $quantity of $product_id  " . var_export($e->errorInfo, true));
+    }
+    return false;
+}
+function add_rating( $product_id, $user_id, $rating, $comment)
+{
+    error_log("add_rating() Product ID: $product_id,  rating: $rating");
+    if ($product_id <= 0 || $user_id == "" ||  $rating <=0) {
+        return;
+    }
+    $db = getDB();
+    $stmt = $db->prepare("INSERT INTO Ratings ( product_id, user_id, rating, comment) VALUES (:pid, :uid, :rat, :com) ");
+    try {
+        //if using bindValue, all must be bind value, can't split between this an execute assoc array
+        $stmt->bindValue(":pid", $product_id, PDO::PARAM_INT);
+        $stmt->bindValue(":uid", $user_id, PDO::PARAM_STR);
+        $stmt->bindValue(":rat", $rating, PDO::PARAM_INT);
+        $stmt->bindValue(":com", $comment, PDO::PARAM_STR);
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+        error_log("Error adding rating of $rating for product $product_id " . var_export($e->errorInfo, true));
     }
     return false;
 }
