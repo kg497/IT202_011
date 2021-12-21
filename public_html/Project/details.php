@@ -5,7 +5,7 @@ $result = [];
 $result3 = [];
 $columns = get_columns("Products");
 //echo "<pre>" . var_export($columns, true) . "</pre>";
-$ignore = ["id", "visibility", "modified", "created"];
+$ignore = ["id", "visibility", "modified", "created", "avg_rating" ,"num_rating"];
 $db = getDB();
 //get the item
 $id = se($_GET, "id", -1, false);
@@ -67,9 +67,7 @@ function mapColumn($col)
                     <label class="form-control" for ="<?php se($value); ?>"> <?php se($value); ?>  </label>
                     
                 </div>
-                
             <?php endif; ?>
-            
         <?php endforeach; ?>
         <?php if($purchase) :?>
         <div class="mb-4">
