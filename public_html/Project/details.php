@@ -16,6 +16,8 @@ try {
     $r = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($r) {
         $result = $r;
+        $avg_rating = $r["avg_rating"];
+        $avg_rating = round($avg_rating, 1);
     }
 } catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre>");
@@ -78,6 +80,11 @@ function mapColumn($col)
             <a href="admin/edit_item.php?id=<?php se($id); ?>">Edit</a>
         <?php endif; ?>
 
+        <div class="mb-4">
+                    <label class="form-label" for="avg_rating"> Average Rating</label>
+                    <label class="form-control" for ="<?php se($avg_rating); ?>"> <?php se($avg_rating); ?>  / 5</label>
+                    
+                </div>
         <?php foreach ($result3 as $item) : ?>
             <div class="col">
                 <div class="card">
