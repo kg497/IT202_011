@@ -6,16 +6,30 @@ if (!has_role("Admin")) {
     flash("You don't have permission to view this page", "warning");
     die(header("Location: $BASE_PATH" . "home.php"));
 }
-
+$db = getDB();
 $results = [];
+$stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE stock <= :stock");
+
 if (isset($_POST["itemName"])) {
-    $db = getDB();
-    $stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE name like :name LIMIT 50");
+    $stmt2 = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE name like :name LIMIT 50");
     try {
-        $stmt->execute([":name" => "%" . $_POST["itemName"] . "%"]);
-        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt2->execute([":name" => "%" . $_POST["itemName"] . "%"]);
+        $r = $stmt2->fetchAll(PDO::FETCH_ASSOC);
         if ($r) {
             $results = $r;
+        }
+    } catch (PDOException $e) {
+        flash("<pre>" . var_export($e, true) . "</pre>");
+    }
+}
+if(isset($_POST["stock"])){
+    $stock = se($_POST, "stock", 0, false);
+    echo($stock);
+    try {
+        $stmt->execute([":stock"=> $stock]);
+        $m = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($m) {
+            $results = $m;
         }
     } catch (PDOException $e) {
         flash("<pre>" . var_export($e, true) . "</pre>");
@@ -27,8 +41,13 @@ if (isset($_POST["itemName"])) {
     <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
         <div class="input-group mb-3">
             <input class="form-control" type="search" name="itemName" placeholder="Item Filter" />
-            <input class="btn btn-primary" type="submit" value="Search" />
+            
         </div>
+        <div class="mb-3">
+            <label class="form-label" for="pw">Search Items with Stock less than</label>
+            <input class="form-control" type="number" id="stock" name="stock" />
+        </div>
+        <input class="btn btn-primary" type="submit" value="Search" />
     </form>
     <?php if (count($results) == 0) : ?>
         <p>No results to show</p>
