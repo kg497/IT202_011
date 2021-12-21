@@ -111,8 +111,7 @@ foreach ($result as $item){
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
-        
+        <?php endforeach; ?>        
 </div>
 
 
