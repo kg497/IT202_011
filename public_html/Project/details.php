@@ -81,9 +81,10 @@ function mapColumn($col)
         <?php endif; ?>
 
         <div class="mb-4">
+            <?php if($avg_rating!=0): ?>
                     <label class="form-label" for="avg_rating"> Average Rating</label>
                     <label class="form-control" for ="<?php se($avg_rating); ?>"> <?php se($avg_rating); ?>  / 5</label>
-                    
+            <?php endif; ?>    
                 </div>
         <?php foreach ($result3 as $item) : ?>
             <div class="col">
