@@ -5,6 +5,8 @@ require(__DIR__ . "/../../partials/nav.php");
 //check if user has purchased this item before in 
 //create php that will insert into ratings table 
 //in details .php select from the ratings table, and use for loop to print
+//average ratings
+//pagination
 $product_id = se($_GET, "id", -1, false);
 $user_id = get_user_id();
 

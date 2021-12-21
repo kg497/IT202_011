@@ -33,7 +33,7 @@ try {
     flash("<pre>" . var_export($e, true) . "</pre>");
 }
 
-$stmt3 = $db->prepare("SELECT rating, comment FROM Ratings WHERE product_id = :product_id");
+$stmt3 = $db->prepare("SELECT rating, comment FROM Ratings WHERE product_id = :product_id ORDER BY created DESC LIMIT 10");
 //come back here to show username of public profiles
 try{
     $stmt3->execute([":product_id"=>$id]);
