@@ -4,6 +4,7 @@
 //sort by total
 //date purchase
 require(__DIR__ . "/../../partials/nav.php");
+require(__DIR__. "/../../partials/flash.php"); 
 is_logged_in(true);
 $result=[];
 $db = getDB();
@@ -17,8 +18,14 @@ if(isset($_POST["category"])){
         $query .= " AND Products.category = :category";
         $params[":category"] = $category;
     }
-   
-    //echo($query);
+
+}
+if(isset($_POST["created"])){
+    $time = se($_POST,"created", "", false);
+    if($time != "select"){
+        $query .= " AND Orders.created >= DATE_SUB(NOW(), INTERVAL 1 $time)";
+       
+    }
 }
 
 if(isset($_POST["ascend"])){
@@ -50,8 +57,10 @@ try {
             <option value="dessert">Dessert</option>
             <option value="drinks">Drinks</option>
             <option value="sides">Sides</option>
-        </select>  
+        </select>
+    <label for="created">Search by Purchase Date:</label>  
         <select name="created" id="rating">
+            <option value="select">select</option>
             <option value="day">Past Day</option>
             <option value="week">Past Week</option>
             <option value="month">Past Month</option>
