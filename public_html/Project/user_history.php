@@ -1,7 +1,7 @@
 <?php
-//filter by date range
-//filter by category
-//sort by total
+//filter by date range check
+//filter by category check
+//sort by total check
 //date purchase
 require(__DIR__ . "/../../partials/nav.php");
 require(__DIR__. "/../../partials/flash.php"); 
@@ -34,6 +34,12 @@ if(isset($_POST["ascend"])){
 else if (isset($_POST["descend"])){
     $query .= " ORDER BY Orders.total_price DESC";
 }
+else if(isset($_POST["recent"])){
+    $query .= " ORDER BY Orders.created DESC";
+}
+else if(isset($_POST["oldest"])){
+    $query .= " ORDER BY Orders.created ASC";
+}
 
 $stmt = $db->prepare($query);
 
@@ -51,7 +57,7 @@ try {
     <h1>Purchase History</h1>
     <form onsubmit=true method="POST" >
     <label for="category">Search by Category:</label>
-        <select name="category" id="rating">
+        <select name="category" id="category">
             <option value="select">select</option>
             <option value="lunch">Lunch</option>
             <option value="dessert">Dessert</option>
@@ -59,7 +65,7 @@ try {
             <option value="sides">Sides</option>
         </select>
     <label for="created">Search by Purchase Date:</label>  
-        <select name="created" id="rating">
+        <select name="created" id="created">
             <option value="select">select</option>
             <option value="day">Past Day</option>
             <option value="week">Past Week</option>
@@ -67,6 +73,13 @@ try {
             <option value="year">Past Year</option>
         </select>  
         <input type="submit"  class = "btn btn-primary" value='Search'>
+    </form>
+    
+    <form method = "POST" class = "row row-cols-lg-auto g-3 align-items-center">
+        <div class="input-group mb-3">
+            <input class="btn btn-primary" name= "oldest" type="submit" value="Date: Oldest to Newest" />
+            <input class="btn btn-primary" name= "recent" type="submit" value="Date: Newest to Oldest" />
+        </div>
     </form>
     <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
         <div class="input-group mb-3">
