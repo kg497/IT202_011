@@ -5,7 +5,7 @@ $result = [];
 $result3 = [];
 $columns = get_columns("Products");
 //echo "<pre>" . var_export($columns, true) . "</pre>";
-$ignore = ["id", "visibility", "modified", "created"];
+$ignore = ["id", "visibility", "modified", "created", "avg_rating" ,"num_rating"];
 $db = getDB();
 //get the item
 $id = se($_GET, "id", -1, false);
@@ -16,6 +16,8 @@ try {
     $r = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($r) {
         $result = $r;
+        $avg_rating = $r["avg_rating"];
+        $avg_rating = round($avg_rating, 1);
     }
 } catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre>");
@@ -67,9 +69,7 @@ function mapColumn($col)
                     <label class="form-control" for ="<?php se($value); ?>"> <?php se($value); ?>  </label>
                     
                 </div>
-                
             <?php endif; ?>
-            
         <?php endforeach; ?>
         <?php if($purchase) :?>
         <div class="mb-4">
@@ -80,6 +80,12 @@ function mapColumn($col)
             <a href="admin/edit_item.php?id=<?php se($id); ?>">Edit</a>
         <?php endif; ?>
 
+        <div class="mb-4">
+            <?php if($avg_rating!=0): ?>
+                    <label class="form-label" for="avg_rating"> Average Rating</label>
+                    <label class="form-control" for ="<?php se($avg_rating); ?>"> <?php se($avg_rating); ?>  / 5</label>
+            <?php endif; ?>    
+                </div>
         <?php foreach ($result3 as $item) : ?>
             <div class="col">
                 <div class="card">

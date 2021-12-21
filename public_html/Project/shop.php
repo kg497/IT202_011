@@ -14,7 +14,11 @@ $results = [];
         $stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE name like :name AND visibility ORDER BY unit_price DESC LIMIT 20");
         $stmt2 = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE category = :category AND visibility ORDER BY unit_price DESC LIMIT 20");
     }
-    
+    else if (isset($_POST["submit3"])){
+        $stmt = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE name like :name AND visibility ORDER BY avg_rating DESC LIMIT 20");
+        $stmt2 = $db->prepare("SELECT id, name, description, category, stock, unit_price, visibility from Products WHERE category = :category AND visibility ORDER BY avg_rating DESC LIMIT 20");
+    }
+
     try {
         $name = se($_POST, "itemName","", false);
         $stmt->execute([":name" => "%" . $name . "%"]);
@@ -33,32 +37,6 @@ $results = [];
         flash("<pre>" . var_export($e, true) . "</pre>");
     }
 ?>
-<script>
-    function addToCart(item, cost) {
-        let http = new XMLHttpRequest();
-            http.onreadystatechange = () => {
-                if (http.readyState == 4) {
-                    if (http.status === 200) {
-                        let data = JSON.parse(http.responseText);
-                        console.log("received data", data);
-                        flash(data.message, "success");
-                    }
-                    console.log(http);
-                }
-            }
-            http.open("POST", "add_to_cart.php", true);
-            let data = {
-                product_id: item,
-                quantity: 1,
-                unit_price: cost
-            }
-            
-            let q = Object.keys(data).map(key => key + '=' + data[key]).join('&');
-            console.log(q)
-            http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            http.send(q);
-    } 
-</script>
 <div class="container-fluid">
     <h1>Order</h1>
     <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
@@ -71,8 +49,10 @@ $results = [];
         <div class="input-group mb-3">
             <input class="btn btn-primary" name= "submit" type="submit" value="Price Ascend" />
             <input class="btn btn-primary" name = "submit2" type="submit" value=" Price Descend" />
+            <input class="btn btn-primary" name = "submit3" type="submit" value=" Highest Rated" />
         </div>
     </form>
+    
     
     <?php if (count($results) == 0) : ?>
         <p>No results to show</p>
