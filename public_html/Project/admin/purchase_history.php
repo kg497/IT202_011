@@ -4,6 +4,7 @@ require(__DIR__. "/../../../partials/flash.php");
 
 is_logged_in(true);
 $results=[];
+$results2=[];
 $db = getDB();
 $user_id = get_user_id();
 $params=[];
@@ -37,7 +38,22 @@ if (!in_array($order, ["asc", "desc"])) {
         $query .= " ORDER BY Orders.$col $order"; //be sure you trust these values, I validate via the in_array checks above
     }
 
-$per_page = 10;
+$per_page = 5;
+$stmt2 = $db->prepare($base_query.$query); //dynamically generated query
+//$stmt = $db->prepare("SELECT id, name, description, cost, stock, image FROM BGD_Items WHERE stock > 0 LIMIT 50");
+try {
+    $stmt2->execute($params); 
+    $m = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+    if ($m) {
+        $results2 = $m;
+    }
+} catch (PDOException $e) {
+    flash("<pre>" . var_export($e, true) . "</pre>");
+}
+$totaltotal =0;
+foreach ($results2 as $item){
+    $totaltotal += $item["total_price"];
+}
 
 paginate($total_query . $query, $params, $per_page);
 $query .= " LIMIT :offset, :count";
@@ -63,9 +79,7 @@ try {
     error_log("error getting data: " . var_export($e, true));
 }
 
-foreach ($results as $item){
-    $totaltotal += $item["total_price"];
-}
+
 ?>
 <div class="container-fluid">
     <h1>Purchase History</h1>
@@ -103,7 +117,7 @@ foreach ($results as $item){
         <input type="submit"  class = "btn btn-primary" value='Search'>
     </form>
     <div class = "mb-3">
-        <label class="form-label" for="tottot">Total Cost of All Searches <?php se($totaltotal)?> </label> 
+        <label class="form-label" for="tottot">Total Cost of All Searches $<?php se($totaltotal)?> </label> 
     </div>
     <?php include(__DIR__. "/../../../partials/pagination.php"); ?>
         <?php foreach ($results as $item) : ?>
