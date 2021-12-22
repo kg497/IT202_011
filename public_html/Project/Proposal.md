@@ -851,9 +851,7 @@ Shows verification of desired product and desired quantity are still available i
 </table>
 </td>
 </tr></td></tr></table>
-- Milestone 2        
-- Milestone 3
-- Milestone 4
+
 ### Intructions
 #### Don't delete this
 1. Pick one project type
