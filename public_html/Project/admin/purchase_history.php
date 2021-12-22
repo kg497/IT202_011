@@ -100,10 +100,7 @@ try {
             <option value="month">Past Month</option>
             <option value="year">Past Year</option>
         </select>  
-        <input type="submit"  class = "btn btn-primary" value='Search'>
-    </form>
-    <form method="GET" class="row row-cols-lg-auto g-3 align-items-center">
-    <label for="col">Sort By:</label>
+        <label for="col">Sort By:</label>
         <select name="col" id="col">
             <option value="select">select</option>
             <option value="total_price">Total Price</option>
@@ -116,6 +113,7 @@ try {
         </select>
         <input type="submit"  class = "btn btn-primary" value='Search'>
     </form>
+    
     <div class = "mb-3">
         <label class="form-label" for="tottot">Total Cost of All Searches $<?php se($totaltotal)?> </label> 
     </div>

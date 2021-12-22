@@ -66,7 +66,7 @@ try {
 ?>
 <div class="container-fluid">
     <h1>Purchase History</h1>
-    <form onsubmit=true method="GET" >
+    <form method="GET" class="row row-cols-lg-auto g-3 align-items-center">
     <label for="category">Search by Category:</label>
         <select name="category" id="category">
             <option value="select">select</option>
@@ -83,9 +83,19 @@ try {
             <option value="month">Past Month</option>
             <option value="year">Past Year</option>
         </select>  
+        <label for="col">Sort By:</label>
+        <select name="col" id="col">
+            <option value="select">select</option>
+            <option value="total_price">Total Price</option>
+            <option value="created">Time</option>
+        </select>
+        <select name="order" value="<?php se($order)?>">
+            <option value="select">select</option>
+            <option value="asc">Low to high</option>
+            <option value="desc">High to low</option>
+        </select>
         <input type="submit"  class = "btn btn-primary" value='Search'>
     </form>
-    <form onsubmit=true method="GET" >
     <label for="col">Sort By:</label>
         <select name="col" id="col">
             <option value="select">select</option>
