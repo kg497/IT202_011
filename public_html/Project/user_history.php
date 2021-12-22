@@ -7,7 +7,7 @@ $results=[];
 $db = getDB();
 $user_id = get_user_id();
 $params=[];
-$total_query = "SELECT count(1) AS total FROM Orders";
+$total_query = "SELECT count(1) AS total  FROM Orders INNER JOIN OrderItems ON OrderItems.order_id= Orders.id INNER JOIN Products ON OrderItems.product_id = Products.id";
 $base_query ="SELECT Orders.id, Orders.total_price, Orders.address, Orders.payment_method, Products.category, Orders.created FROM Orders INNER JOIN OrderItems ON OrderItems.order_id= Orders.id INNER JOIN Products ON OrderItems.product_id = Products.id";
 $query = " WHERE user_id = :user_id"; 
 $params[":user_id"] = $user_id;

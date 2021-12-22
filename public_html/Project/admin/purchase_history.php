@@ -8,12 +8,12 @@ $db = getDB();
 $user_id = get_user_id();
 $params=[];
 $totaltotal =0;
-$total_query = "SELECT count(1) AS total FROM Orders";
+$total_query = "SELECT count(1) AS total  FROM Orders INNER JOIN OrderItems ON OrderItems.order_id= Orders.id INNER JOIN Products ON OrderItems.product_id = Products.id";
 $base_query ="SELECT Orders.id, Orders.user_id, Orders.total_price, Orders.address, Orders.payment_method, Products.category, Orders.created FROM Orders INNER JOIN OrderItems ON OrderItems.order_id= Orders.id INNER JOIN Products ON OrderItems.product_id = Products.id";
 $query = " WHERE 1=1"; 
 $col = se($_GET, "col", "created", false);
 //allowed list
-if (!in_array($col, ["total_price","category", "created"])) {
+if (!in_array($col, ["total_price", "created"])) {
     $col = "created"; //default value, prevent sql injection
 }
 $order = se($_GET, "order", "asc", false);
@@ -37,7 +37,7 @@ if (!in_array($order, ["asc", "desc"])) {
         $query .= " ORDER BY Orders.$col $order"; //be sure you trust these values, I validate via the in_array checks above
     }
 
-$per_page = 5;
+$per_page = 10;
 
 paginate($total_query . $query, $params, $per_page);
 $query .= " LIMIT :offset, :count";
@@ -51,7 +51,6 @@ foreach ($params as $key => $value) {
     error_log("bound data: " . var_export($key, true));
 }
 $params = null; //set it to null to avoid issues
-
 try {
     $stmt->execute($params); //dynamically populated params to bind
     $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -70,7 +69,7 @@ foreach ($results as $item){
 ?>
 <div class="container-fluid">
     <h1>Purchase History</h1>
-    <form onsubmit=true method="GET" >
+    <form method="GET" class="row row-cols-lg-auto g-3 align-items-center">
     <label for="category">Search by Category:</label>
         <select name="category" id="category">
             <option value="select">select</option>
@@ -89,7 +88,7 @@ foreach ($results as $item){
         </select>  
         <input type="submit"  class = "btn btn-primary" value='Search'>
     </form>
-    <form onsubmit=true method="GET" >
+    <form method="GET" class="row row-cols-lg-auto g-3 align-items-center">
     <label for="col">Sort By:</label>
         <select name="col" id="col">
             <option value="select">select</option>
