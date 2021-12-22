@@ -9,7 +9,7 @@ $total=0;
 $res = [];
 $columns = get_columns("Cart");
 //echo "<pre>" . var_export($columns, true) . "</pre>";
-$ignore = ["id", "modified", "created"];
+$ignore = ["id", "modified", "created", "avg_rating", "num_rating"];
 $result=[];
 $db = getDB();
 $user_id = get_user_id();
