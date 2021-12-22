@@ -1,9 +1,11 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
+
 require(__DIR__. "/../../partials/flash.php"); 
 
 is_logged_in(true);
 $results=[];
+
 $db = getDB();
 $user_id = get_user_id();
 $params=[];
