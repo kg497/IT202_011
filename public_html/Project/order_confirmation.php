@@ -1,6 +1,6 @@
 <?php
-is_logged_in(true);
 require(__DIR__."/../../partials/nav.php");
+is_logged_in(true);
 $db = getDB();
 $result=[];
 $result2=[];
@@ -66,5 +66,4 @@ try {
                 </div>
             </div>
     <?php endforeach; ?>
-
 </div>

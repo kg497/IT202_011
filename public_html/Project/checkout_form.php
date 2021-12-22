@@ -96,8 +96,6 @@ if (isset($_POST["address"]) && isset($_POST["payment"])) {
             flash("<pre>" . var_export($e, true) . "</pre>");
         }
         redirect('order_confirmation.php?id='.$order_id);
-        
-        
     }
 
 }
