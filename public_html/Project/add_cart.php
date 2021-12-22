@@ -5,7 +5,7 @@ is_logged_in(true);
 $result = [];
 $columns = get_columns("Products");
 //echo "<pre>" . var_export($columns, true) . "</pre>";
-$ignore = ["id", "visibility", "modified", "created", "description"];
+$ignore = ["id", "visibility", "modified", "created", "description", "avg_rating", "num_rating"];
 $db = getDB();
 //get the item
 $product_id = se($_GET, "id", -1, false);
