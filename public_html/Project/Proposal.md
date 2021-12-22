@@ -436,6 +436,421 @@ Shows verification of desired product and desired quantity are still available i
 </td>
 </tr></td></tr></table>
 
+
+<table>
+<tr><td>Milestone 4</td></tr><tr><td>
+<table>
+<tr><td>F1 - User can set their profile to be public or private (will need another column in Users table) (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:</td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/92](https://github.com/kg497/IT202_011/pull/92)</p><p>
+
+ [https://github.com/kg497/IT202_011/pull/98](https://github.com/kg497/IT202_011/pull/98)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F1 - If public, hide email address from other users</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147056627-18538d10-76c0-459a-87e8-a340a0877671.png">
+<p>Profile is updated to have a toggle to allow users to make profile private or public. This will be changed to true or false in a new column, visibility, in Users table</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147056866-a637c09d-3a39-4ca4-a25d-be1bb7df5bba.png">
+<p>On the order details page, a user with a public profile's username will be shown but private profiles will just say Anonymous</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147057329-e5196665-b27f-4df6-9b99-b0152635f1cc.png">
+<p>A public profile will have a link to their profile information. This does not include their email address.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F2 - User will be able to rate a product they purchased (2021-12-22)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/details.php?id=8](https://kg497-prod.herokuapp.com/Project/details.php?id=8)</p><p>
+
+ [https://kg497-prod.herokuapp.com/Project/ratings.php?id=8](https://kg497-prod.herokuapp.com/Project/ratings.php?id=8)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/92](https://github.com/kg497/IT202_011/pull/92)</p><p>
+
+ [https://github.com/kg497/IT202_011/pull/96](https://github.com/kg497/IT202_011/pull/96)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F2 - Create table called Ratings (id, product_id, user_id, rating, comment, created)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147054544-d2f90bb9-2cb8-4142-9ed7-59c20892941d.png">
+<p>Table for Ratings has a rating (1-5) and comment type TEXT</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F2 - 1-5 rating ,Text Comment, Must be done on the Product Details Page</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147055323-f53a293b-2138-480e-b269-b1479a07ff3c.png">
+<p>User can rate items they purchased out of 5 and can include a review.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F2 - Ratings and Rating Comments will be visible on the Product Details page (Paginate beyond 10)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147054825-0437040a-ef42-42f2-ad8f-9233ccf55fe3.png">
+<p>Printing of reviews is done in the Product Details Page for that item. Each rating shows the rating out of 5 and any comment the user left. Pagination bar is also available.  Rate button only appears if user has bought the product</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F2 - Show the average rating on the Product Details Page</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147055708-4e05acc2-96ce-4e59-a892-6e62536d2261.png">
+<p>Average rating shown. There are two ratings for product Ice Cream Cone of 5 and 1 which correctly averages to 3/5.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F3 - User’s Purchase History Changes (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/user_history.php](https://kg497-prod.herokuapp.com/Project/user_history.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/93](https://github.com/kg497/IT202_011/pull/93)</p><p>
+
+ [https://github.com/kg497/IT202_011/pull/97](https://github.com/kg497/IT202_011/pull/97)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F3 - Filter by date range</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147057948-abbf8ffa-c124-4e17-b2da-68d36fa926e5.png">
+<p>Shows drop down which allows user to see their past purchases in the last day, week, month, or year.</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147058212-4171d401-9a08-478e-91ea-a8131a23933a.png">
+<p>After doing a search by purchase date of the last week, only purchases on dates 12/18 and 12/19 showed up. No purchases from more than a week ago appeared.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F3 - Filter by category</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147058518-8c9982fb-a030-4663-8708-2f9c793f3d27.png">
+<p>Shows dropdown so user can sort by category. All orders will have at least one product that matches that category, shown in the Order Details links</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F3 - Sort by total, date purchased, etc</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147059039-29079e9a-d031-459c-9eae-434a7d26db95.png">
+<p>Shows dropdown that allows user to sort by Purchase Date or Total Price. </p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147059144-8466bc75-154b-43fa-aef3-92ac94c6fbe0.png">
+<p>Shows dropdown that allows user to make the Date/ Total Price be from lowest to highest, or highest to low</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147059298-1a24669a-c2bf-46fc-90bf-9d059f31e823.png">
+<p>After doing a sort by Total Price from low to high the following is displayed, which shows the Total Cost increasing down the page</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F3 - Add pagination</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147059761-4ca9a7ff-1a0b-4ff3-8a03-8389c3109626.png">
+<p>After filtering by past year, 9 pages of information show up. Each page has 5 orders.</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147059995-65d657c9-07b0-4c74-ada6-5a4b93fab194.png">
+<p>After filtering by past week, only one page of information shows up.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F4 - Store Owner Purchase History Changes (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/admin/purchase_history.php](https://kg497-prod.herokuapp.com/Project/admin/purchase_history.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/94](https://github.com/kg497/IT202_011/pull/94)</p><p>
+
+ [https://github.com/kg497/IT202_011/pull/97](https://github.com/kg497/IT202_011/pull/97)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F4 - Filter by Date Range </td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147060684-560c8cae-bef3-433a-bf2a-162153d95f91.png">
+<p>Admin has same capability as user to sort by date range of day, week, month, or year</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F4 -  Filter by Category</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147060880-f1b5e27a-d5dc-4826-b6d4-af05468691e3.png">
+<p>Admin has capability to sort by the categories listed in the dropdown</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F4 - Sort by total, date purchased, etc</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147061017-7e340798-1324-4e4f-96ae-edb34d6203cb.png">
+<p>Admin can sort by Purchase date or total price in ascending or descending order</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F4 - Add Pagination</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147061345-f9014082-e024-4578-80ff-9278b4be5fac.png">
+<p>With filters of past week and sorted by the total price low to high pagination still persists. The dates are all from the last week and the total price increases. </p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F4 - The result page should show the accurate total price of the combined search results</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147062059-2e535449-2508-45dc-9267-48d4038ffc82.png">
+<p>The total cost of the search is displayed at the top. This is the total of all orders in the search, not just the ones shown on that page.</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F5 - Add pagination to Shop Page (and any other product lists not yet mentioned) (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/shop.php](https://kg497-prod.herokuapp.com/Project/shop.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/97](https://github.com/kg497/IT202_011/pull/97)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F5 - Pagination of Shop</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147062595-dd6d4036-61cb-4a90-bd40-e9ca35bbda5e.png">
+<p>Shows first page of shop, which shows 5 products</p>
+</td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147062624-9a5b6472-ac17-4cdd-bbd0-c61d99cf0612.png">
+<p>Shows second page of shop, which shows 5 different products</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F6 - Store Owner will be able to see all products out of stock (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/admin/list_items.php](https://kg497-prod.herokuapp.com/Project/admin/list_items.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/95](https://github.com/kg497/IT202_011/pull/95)</p><p>
+
+ [https://github.com/kg497/IT202_011/pull/97](https://github.com/kg497/IT202_011/pull/97)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F6 - This will be added as a filter to their product list page from Milestone 2</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147063431-58b92867-bf41-4f12-a669-004975a23a70.png">
+<p>Product list allows for stock <= filter to be applied</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F6 - Pagination should account for this new filter</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147063592-3560d3b1-07fa-44f9-b21c-3f8738552a9d.png">
+<p>Admin can click on different pages to continue seeing items</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td>
+<table>
+<tr><td>F6 - Recommended to have the filter applied as a given value (i.e., where quantity is <= value)</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147063730-3cfcf7cd-2306-41a9-acca-41ededee9fc8.png">
+<p>With an input of 5, only products with stock less than that appeared. This included the item 'chicken nuggets' which is out of stock</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<table>
+<tr><td>F7 - User can sort products by average rating on the Shop Page (2021-12-21)</td></tr>
+<tr><td>Status: complete</td></tr>
+<tr><td>Links:<p>
+
+ [https://kg497-prod.herokuapp.com/Project/shop.php](https://kg497-prod.herokuapp.com/Project/shop.php)</p></td></tr>
+<tr><td>PRs:<p>
+
+ [https://github.com/kg497/IT202_011/pull/96](https://github.com/kg497/IT202_011/pull/96)</p></td></tr>
+<tr><td>
+<table>
+<tr><td>F7 - Done by adding average rating column to Products table</td></tr>
+<tr><td>Status: 
+<img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=completed"></td></tr>
+
+<tr><td>
+<img width="768px" src="https://user-images.githubusercontent.com/90022095/147064941-eca8e6d9-c883-4783-8f65-8c425e3139a8.png">
+<p>user can sort by average rating ascending or descending</p>
+</td></tr>
+
+</td>
+</tr>
+</table>
+</td>
+</tr></td></tr></table>
 - Milestone 2        
 - Milestone 3
 - Milestone 4
