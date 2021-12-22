@@ -1,64 +1,76 @@
 <?php
 require(__DIR__ . "/../../../partials/nav.php");
-if (!has_role("Admin")) {
-    flash("You don't have permission to view this page", "warning");
-    die(header("Location: $BASE_PATH" . "home.php"));
-}
-$result=[];
+require(__DIR__. "/../../../partials/flash.php"); 
+
+is_logged_in(true);
+$results=[];
 $db = getDB();
 $user_id = get_user_id();
 $params=[];
 $totaltotal =0;
-$query ="SELECT Orders.id, Orders.total_price, Orders.address, Orders.payment_method, Products.category, Orders.created FROM Orders INNER JOIN OrderItems ON OrderItems.order_id= Orders.id INNER JOIN Products ON OrderItems.product_id = Products.id WHERE 1=1";
-//$params[":user_id"] = $user_id;
-if(isset($_POST["category"])){
-    $category = se($_POST,"category", "", false);
-    if($category != "select"){
+$total_query = "SELECT count(1) AS total FROM Orders";
+$base_query ="SELECT Orders.id, Orders.user_id, Orders.total_price, Orders.address, Orders.payment_method, Products.category, Orders.created FROM Orders INNER JOIN OrderItems ON OrderItems.order_id= Orders.id INNER JOIN Products ON OrderItems.product_id = Products.id";
+$query = " WHERE 1=1"; 
+$col = se($_GET, "col", "created", false);
+//allowed list
+if (!in_array($col, ["total_price","category", "created"])) {
+    $col = "created"; //default value, prevent sql injection
+}
+$order = se($_GET, "order", "asc", false);
+//allowed list
+if (!in_array($order, ["asc", "desc"])) {
+    $order = "asc"; //default value, prevent sql injection
+}
+
+    $category = se($_GET,"category", "", false);
+    if(!empty($category) && $category != "select"){
         $query .= " AND Products.category = :category";
         $params[":category"] = $category;
     }
 
-}
-if(isset($_POST["created"])){
-    $time = se($_POST,"created", "", false);
-    if($time != "select"){
+    $time = se($_GET,"created", "", false);
+    if(!empty($time) && $time!= "select"){
         $query .= " AND Orders.created >= DATE_SUB(NOW(), INTERVAL 1 $time)";
-       
     }
-}
+   
+    if (!empty($col) && !empty($order) && $col != "select" && $order != "select") {
+        $query .= " ORDER BY Orders.$col $order"; //be sure you trust these values, I validate via the in_array checks above
+    }
 
-if(isset($_POST["ascend"])){
-    $query .= " ORDER BY Orders.total_price ASC";
-}
-else if (isset($_POST["descend"])){
-    $query .= " ORDER BY Orders.total_price DESC";
-}
-else if(isset($_POST["recent"])){
-    $query .= " ORDER BY Orders.created DESC";
-}
-else if(isset($_POST["oldest"])){
-    $query .= " ORDER BY Orders.created ASC";
-}
+$per_page = 5;
 
-$stmt = $db->prepare($query);
+paginate($total_query . $query, $params, $per_page);
+$query .= " LIMIT :offset, :count";
+$params[":offset"] = $offset;
+$params[":count"] = $per_page;
+$stmt = $db->prepare($base_query . $query); //dynamically generated query
+//we'll want to convert this to use bindValue so ensure they're integers so lets map our array
+foreach ($params as $key => $value) {
+    $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+    $stmt->bindValue($key, $value, $type);
+    error_log("bound data: " . var_export($key, true));
+}
+$params = null; //set it to null to avoid issues
 
 try {
-    $stmt->execute($params);
-    $r = $stmt->fetchALL(PDO::FETCH_ASSOC);
+    $stmt->execute($params); //dynamically populated params to bind
+    $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($r) {
-        $result = $r;
+        $results = $r;
+        //error_log("got data: " . var_export($results, true));
     }
-}catch (PDOException $e) {
+} catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre>");
-}
-foreach ($result as $item){
-    $totaltotal += $item["total_price"];
+    error_log("error getting data: " . var_export($e, true));
 }
 
+foreach ($results as $item){
+    $totaltotal += $item["total_price"];
+}
 ?>
 <div class="container-fluid">
     <h1>Purchase History</h1>
-    <form onsubmit=true method="POST" >
+    <form onsubmit=true method="GET" >
     <label for="category">Search by Category:</label>
         <select name="category" id="category">
             <option value="select">select</option>
@@ -77,29 +89,32 @@ foreach ($result as $item){
         </select>  
         <input type="submit"  class = "btn btn-primary" value='Search'>
     </form>
-    
-    <form method = "POST" class = "row row-cols-lg-auto g-3 align-items-center">
-        <div class="input-group mb-3">
-            <input class="btn btn-primary" name= "oldest" type="submit" value="Date: Oldest to Newest" />
-            <input class="btn btn-primary" name= "recent" type="submit" value="Date: Newest to Oldest" />
-        </div>
-    </form>
-    <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
-        <div class="input-group mb-3">
-            <input class="btn btn-primary" name= "ascend" type="submit" value="Total Price Ascend" />
-            <input class="btn btn-primary" name = "descend" type="submit" value=" Total Price Descend" />
-        </div>
+    <form onsubmit=true method="GET" >
+    <label for="col">Sort By:</label>
+        <select name="col" id="col">
+            <option value="select">select</option>
+            <option value="total_price">Total Price</option>
+            <option value="created">Time</option>
+        </select>
+        <select name="order" value="<?php se($order)?>">
+            <option value="select">select</option>
+            <option value="asc">Low to high</option>
+            <option value="desc">High to low</option>
+        </select>
+        <input type="submit"  class = "btn btn-primary" value='Search'>
     </form>
     <div class = "mb-3">
         <label class="form-label" for="tottot">Total Cost of All Searches <?php se($totaltotal)?> </label> 
     </div>
-        <?php foreach ($result as $item) : ?>
+    <?php include(__DIR__. "/../../../partials/pagination.php"); ?>
+        <?php foreach ($results as $item) : ?>
             <?php $time= strtotime($item['created']);
             $date = date("m/d/Y",$time);?>
             <div class="col">
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title">Purchase Date <?php se($date) ;?></h5>
+                        <h5 class="card-title">User ID <?php se($item["user_id"]) ;?></h5>
                     </div>
                     <div class="card-body">
                         <label class="form-label" for="ship">Shipping Address <?php se($item["address"])?> </label>
@@ -107,11 +122,12 @@ foreach ($result as $item){
                     </div>
                     <div class="card-footer">
                         Total Cost: $ <?php se($item, "total_price"); ?>
-                        <a href="order_details.php?id=<?php se($item, "id"); ?>">Order Details</a>
+                        <a href="/../Project/order_details.php?id=<?php se($item, "id"); ?>">Order Details</a>
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>        
+        <?php endforeach; ?>
 </div>
+
 
 

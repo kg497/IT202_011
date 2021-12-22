@@ -35,17 +35,40 @@ try {
     flash("<pre>" . var_export($e, true) . "</pre>");
 }
 
-$stmt3 = $db->prepare("SELECT rating, comment FROM Ratings WHERE product_id = :product_id ORDER BY created DESC LIMIT 10");
-//come back here to show username of public profiles
-try{
-    $stmt3->execute([":product_id"=>$id]);
-    $s= $stmt3->fetchAll(PDO::FETCH_ASSOC);
-    if($s){
-        $result3= $s;
+
+$base_query = "SELECT rating, comment FROM Ratings";
+$total_query = "SELECT count(1) as total FROM Ratings";
+//dynamic query
+$query = " WHERE product_id = :product_id"; 
+$params = [];
+$params[":product_id"]=$id;
+$query .= " ORDER BY created DESC";
+$per_page = 10;
+paginate($total_query . $query, $params, $per_page);
+$query .= " LIMIT :offset, :count";
+$params[":offset"] = $offset;
+$params[":count"] = $per_page;
+//get the records
+$stmt = $db->prepare($base_query . $query); //dynamically generated query
+//we'll want to convert this to use bindValue so ensure they're integers so lets map our array
+foreach ($params as $key => $value) {
+    $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+    $stmt->bindValue($key, $value, $type);
+}
+$params = null; //set it to null to avoid issues
+
+
+//$stmt = $db->prepare("SELECT id, name, description, cost, stock, image FROM BGD_Items WHERE stock > 0 LIMIT 50");
+try {
+    $stmt->execute($params); //dynamically populated params to bind
+    $s = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($s) {
+        $result3 = $s;
     }
-} catch (PDOException $e){
+} catch (PDOException $e) {
     flash("<pre>" . var_export($e, true) . "</pre>");
 }
+
 
 function mapColumn($col)
 {
@@ -86,6 +109,8 @@ function mapColumn($col)
                     <label class="form-control" for ="<?php se($avg_rating); ?>"> <?php se($avg_rating); ?>  / 5</label>
             <?php endif; ?>    
                 </div>
+        <?php include(__DIR__. "/../../partials/pagination.php"); ?>
+                
         <?php foreach ($result3 as $item) : ?>
             <div class="col">
                 <div class="card">
