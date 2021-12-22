@@ -36,13 +36,13 @@ try {
 }
 
 
-$base_query = "SELECT rating, comment FROM Ratings";
-$total_query = "SELECT count(1) as total FROM Ratings";
+$base_query = "SELECT Ratings.rating, Ratings.comment, Ratings.user_id, Users.username , Users.visibility FROM Ratings INNER JOIN Users on Users.id = Ratings.user_id";
+$total_query = "SELECT count(1) as total FROM Ratings INNER JOIN Users on Users.id = Ratings.user_id";
 //dynamic query
 $query = " WHERE product_id = :product_id"; 
 $params = [];
 $params[":product_id"]=$id;
-$query .= " ORDER BY created DESC";
+$query .= " ORDER BY Ratings.created DESC";
 $per_page = 10;
 paginate($total_query . $query, $params, $per_page);
 $query .= " LIMIT :offset, :count";
@@ -58,7 +58,6 @@ foreach ($params as $key => $value) {
 $params = null; //set it to null to avoid issues
 
 
-//$stmt = $db->prepare("SELECT id, name, description, cost, stock, image FROM BGD_Items WHERE stock > 0 LIMIT 50");
 try {
     $stmt->execute($params); //dynamically populated params to bind
     $s = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -115,10 +114,21 @@ function mapColumn($col)
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title">Rating: <?php se($item,"rating"); ?>/5</h5> 
+                        <h5 class="card-title">Rating: <?php se($item,"rating"); ?>/5 by <?php 
+                            $visibility = se($item, "visibility", 0, false);
+                            if($visibility){
+                                $user_id = se($item, "user_id", 0, false);
+                                $username = se($item, "username", "", false);
+                                include(__DIR__ . "/user_profile_link.php");}
+                            else{?>
+                                Anonymous
+                            <?php } ?>
+
+                        </h5> 
                     </div>
                     <div class="card-body">
                          <?php se($item, "comment"); ?>
+                       
                     </div>
                 </div>
             </div> 
