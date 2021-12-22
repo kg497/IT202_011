@@ -1,5 +1,6 @@
 # Project Name: (Simple Shop)
 ## Project Summary: (This project will create a simple e-commerce site for users. Administrators or store owners will be able to manage inventory and users will be able to manage their cart and place orders.)
+## Final Demo Link: https://youtu.be/8H0LT7H-CZ0
 ## Github Link: (Prod Branch of Project Folder) https://github.com/kg497/IT202_011/tree/prod
 ## Project Board Link: https://github.com/kg497/IT202_011/projects/1
 ## Website Link: https://kg497-prod.herokuapp.com/Project
