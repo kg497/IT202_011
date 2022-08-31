@@ -1,6 +1,6 @@
 # Project Name: (Simple Shop)
 ## Project Summary: (This project will create a simple e-commerce site for users. Administrators or store owners will be able to manage inventory and users will be able to manage their cart and place orders.)
-## Github Link: (Prod Branch of Project Folder) https://github.com/kg497/IT202_011/tree/dev
+## Github Link: https://github.com/kg497/IT202_011/tree/dev
 ## Project Board Link: https://github.com/kg497/IT202_011/projects/1
 ## Website Link: https://kg497-prod.herokuapp.com/Project
 ## Your Name: KellyAnne George
